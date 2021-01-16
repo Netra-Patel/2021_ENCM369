@@ -1,2 +1,2 @@
-Netra,Patel,Netra-Patel,2021_ENCM369,Encm
-Jason_Long,netra.patel@ucalgary.ca,UofCencm369,2021_ENCM369
+Netra,Patel,Netra-Patel,netra.patel@ucalgary.ca,
+2021_ENCM369,UofCencm369
