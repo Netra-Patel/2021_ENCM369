@@ -1,2 +1,1 @@
-Netra,Patel,Netra-Patel,netra.patel@ucalgary.ca,
-2021_ENCM369,UofCencm369
+Netra,Patel,netra.patel@ucalgary.ca,Netra-Patel,2021_ENCM369
