@@ -94,11 +94,7 @@ Promises:
 */
 void UserAppRun(void)
 {
-    PORTA =PORTA + 0x01;
-    u32 u32counter=FCY/2;
-    _delay(u32counter);
-            
-    
+
 
 } /* end UserAppRun */
 
