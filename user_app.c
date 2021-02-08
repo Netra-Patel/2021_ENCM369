@@ -94,6 +94,13 @@ Promises:
 */
 void UserAppRun(void)
 {
+    u32 u32Counter = 0x80;      // set counter to 128
+    while(u32Counter < 0xBF)    // while counter less than 191 (2^7-2^6)-1
+    {
+        LATA = u32Counter;         // data latch = counter value and turns on RA7
+        _delay(0x2191C0);           // delay by 2200000 to make it blink quick or slowly
+        u32Counter++;               // increase counter so it starts from 0 
+    }
 
 
 } /* end UserAppRun */
