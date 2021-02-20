@@ -94,15 +94,22 @@ Promises:
 */
 void UserAppRun(void)
 {
-    u32 u32Counter = 0x80;      // set counter to 128
-    while(u32Counter < 0xBF)    // while counter less than 191 (2^7-2^6)-1
+    static u32 u32Previous;          //static doesn't reset
+    u32 u32Current = PORTB & 0x20;   //bitmask to find the value of RA5
+    if(u32Current != u32Previous)    //if button was pressed or not
     {
-        LATA = u32Counter;         // data latch = counter value and turns on RA7
-        _delay(0x2191C0);           // delay by 2200000 to make it blink quick or slowly
-        u32Counter++;               // increase counter so it starts from 0 
+        if(u32Previous != 0x20)     // Indicated the button is pressed
+        {
+            if(LATA==0xC0)          //checks to see if counter need to reset
+            {
+                LATA=0x80;             //resets counter
+            }
+            LATA++;                 //increments counter
+        }
+        u32Previous=u32Current;     ////set new input state
     }
-
-
+    
+    
 } /* end UserAppRun */
 
 

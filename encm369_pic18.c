@@ -88,9 +88,15 @@ Promises:
 */
 void GpioSetup(void)
 {
-    LATA = 0x80; //Set data latch RA7 
-    ANSELA = 0x00; //0 means digital function, 1 means analog function
-    TRISA = 0x00; // input=1, output=0
+    LATA = 0x80; //set data latch RA7 
+    ANSELA = 0x00; //set LATA to digital
+    TRISA = 0x00; // set LATA to outputs
+
+    TRISB= 0xFF;        //set PORTB to all inputs
+    ANSELB =0x00;       //set PORTB to digital
+    
+    
+    
   
   
 } /* end GpioSetup() */
