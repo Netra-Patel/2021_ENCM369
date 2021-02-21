@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
-                                                                                               Sat Feb 20 17:52:22 2021
+                                                                                               Sun Feb 21 14:07:55 2021
 
 Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	18F27Q43
@@ -376,7 +376,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    331                           
    332 ;; *************** function _SystemSleep *****************
    333 ;; Defined at:
-   334 ;;		line 139 in file "encm369_pic18.c"
+   334 ;;		line 134 in file "encm369_pic18.c"
    335 ;; Parameters:    Size  Location     Type
    336 ;;		None
    337 ;; Auto vars:     Size  Location     Type
@@ -424,7 +424,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    369                           
    370 ;; *************** function _SysTickSetup *****************
    371 ;; Defined at:
-   372 ;;		line 117 in file "encm369_pic18.c"
+   372 ;;		line 112 in file "encm369_pic18.c"
    373 ;; Parameters:    Size  Location     Type
    374 ;;		None
    375 ;; Auto vars:     Size  Location     Type
@@ -467,7 +467,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    402  01FF3E                     _SysTickSetup:
    403                           	callstack 127
    404  01FF3E                     
-   405                           ;encm369_pic18.c: 119:   G_u32SystemTime1ms = 0;
+   405                           ;encm369_pic18.c: 114:   G_u32SystemTime1ms = 0;
    406  01FF3E  0E00               	movlw	0
    407  01FF40  6E0D               	movwf	_G_u32SystemTime1ms^(0+1280),c	;volatile
    408  01FF42  0E00               	movlw	0
@@ -477,7 +477,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    412  01FF4A  0E00               	movlw	0
    413  01FF4C  6E10               	movwf	(_G_u32SystemTime1ms+3)^(0+1280),c	;volatile
    414                           
-   415                           ;encm369_pic18.c: 120:   G_u32SystemTime1s = 0;
+   415                           ;encm369_pic18.c: 115:   G_u32SystemTime1s = 0;
    416  01FF4E  0E00               	movlw	0
    417  01FF50  6E09               	movwf	_G_u32SystemTime1s^(0+1280),c	;volatile
    418  01FF52  0E00               	movlw	0
@@ -1156,7 +1156,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.31 build 20201012212115 
-Symbol Table                                                                                   Sat Feb 20 17:52:22 2021
+Symbol Table                                                                                   Sun Feb 21 14:07:55 2021
 
      __size_of_SysTickSetup 0022                          l20 FF3C                          l23 FF5E  
                         l17 FF10                          l26 FF12                          l61 FF14  

@@ -2576,37 +2576,37 @@ Version 4.0 HI-TECH Software Intermediate Code
 "96
 [; ;encm369_pic18.c: 96:     ANSELB =0x00;
 [e = _ANSELB -> -> 0 `i `uc ]
-"102
-[; ;encm369_pic18.c: 102: }
+"97
+[; ;encm369_pic18.c: 97: }
 [e :UE 2273 ]
 }
-"117
-[; ;encm369_pic18.c: 117: void SysTickSetup(void)
+"112
+[; ;encm369_pic18.c: 112: void SysTickSetup(void)
 [v _SysTickSetup `(v ~T0 @X0 1 ef ]
-"118
-[; ;encm369_pic18.c: 118: {
+"113
+[; ;encm369_pic18.c: 113: {
 {
 [e :U _SysTickSetup ]
 [f ]
-"119
-[; ;encm369_pic18.c: 119:   G_u32SystemTime1ms = 0;
+"114
+[; ;encm369_pic18.c: 114:   G_u32SystemTime1ms = 0;
 [e = _G_u32SystemTime1ms -> -> -> 0 `i `l `ul ]
-"120
-[; ;encm369_pic18.c: 120:   G_u32SystemTime1s = 0;
+"115
+[; ;encm369_pic18.c: 115:   G_u32SystemTime1s = 0;
 [e = _G_u32SystemTime1s -> -> -> 0 `i `l `ul ]
-"122
-[; ;encm369_pic18.c: 122: }
+"117
+[; ;encm369_pic18.c: 117: }
 [e :UE 2274 ]
 }
-"139
-[; ;encm369_pic18.c: 139: void SystemSleep(void)
+"134
+[; ;encm369_pic18.c: 134: void SystemSleep(void)
 [v _SystemSleep `(v ~T0 @X0 1 ef ]
-"140
-[; ;encm369_pic18.c: 140: {
+"135
+[; ;encm369_pic18.c: 135: {
 {
 [e :U _SystemSleep ]
 [f ]
-"142
-[; ;encm369_pic18.c: 142: }
+"137
+[; ;encm369_pic18.c: 137: }
 [e :UE 2275 ]
 }

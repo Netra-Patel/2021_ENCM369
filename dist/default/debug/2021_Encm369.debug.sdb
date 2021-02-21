@@ -31,9 +31,9 @@
 [v _ClockSetup ClockSetup `(v  1 e 1 0 ]
 "89
 [v _GpioSetup GpioSetup `(v  1 e 1 0 ]
-"117
+"112
 [v _SysTickSetup SysTickSetup `(v  1 e 1 0 ]
-"139
+"134
 [v _SystemSleep SystemSleep `(v  1 e 1 0 ]
 "35 C:\GithubEncm369\2021_Encm369\main.c
 [v _main main `(v  1 e 1 0 ]
@@ -81,20 +81,20 @@
 {
 "80
 } 0
-"139 C:\GithubEncm369\2021_Encm369\encm369_pic18.c
+"134 C:\GithubEncm369\2021_Encm369\encm369_pic18.c
 [v _SystemSleep SystemSleep `(v  1 e 1 0 ]
 {
-"142
+"137
 } 0
-"117
+"112
 [v _SysTickSetup SysTickSetup `(v  1 e 1 0 ]
 {
-"122
+"117
 } 0
 "89
 [v _GpioSetup GpioSetup `(v  1 e 1 0 ]
 {
-"102
+"97
 } 0
 "70
 [v _ClockSetup ClockSetup `(v  1 e 1 0 ]
