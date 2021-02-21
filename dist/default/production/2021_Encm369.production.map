@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2_31\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\2021_Encm369.production.sym \
   --cmf=dist/default/production\2021_Encm369.production.cmf -z -Q18F27Q43 \
-  -oC:\Users\netra\AppData\Local\Temp\sao8.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\netra\AppData\Local\Temp\s7uc.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/2021_Encm369.production.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=0560h-025FFh -pstack=STACK \
   -ACODE=00h-01FFFFh -ACONST=00h-01FFFFh -ASMALLCONST=02600h-026FFhx474 \
@@ -31,7 +31,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\netra\AppData\Local\Temp\sao8.o \
+  C:\Users\netra\AppData\Local\Temp\s7uc.o \
   dist/default/production\2021_Encm369.production.o 
 
 Object code version is 3.11
@@ -41,7 +41,7 @@ Machine type is 18F27Q43
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\netra\AppData\Local\Temp\sao8.o
+C:\Users\netra\AppData\Local\Temp\s7uc.o
                 idloc                            200000   200000       20        0       5
                 config                           300000   300000        A        0       4
                 init                              1FFFC    1FFFC        4     FFFE       0
@@ -578,7 +578,7 @@ Total ram usage:        0 bytes
 
  *************** function _SystemSleep *****************
  Defined at:
-		line 139 in file "encm369_pic18.c"
+		line 134 in file "encm369_pic18.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -607,7 +607,7 @@ Total ram usage:        0 bytes
 
  *************** function _SysTickSetup *****************
  Defined at:
-		line 117 in file "encm369_pic18.c"
+		line 112 in file "encm369_pic18.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type

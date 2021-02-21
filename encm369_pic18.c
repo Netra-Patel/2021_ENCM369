@@ -93,12 +93,7 @@ void GpioSetup(void)
     TRISA = 0x00; // set LATA to outputs
 
     TRISB= 0xFF;        //set PORTB to all inputs
-    ANSELB =0x00;       //set PORTB to digital
-    
-    
-    
-  
-  
+    ANSELB =0x00;       //set PORTB to digital  
 } /* end GpioSetup() */
 
 
