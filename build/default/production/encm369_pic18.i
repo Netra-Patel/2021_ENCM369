@@ -27307,22 +27307,23 @@ void GpioSetup(void)
     LATA = 0x80;
     ANSELA = 0x00;
     TRISA = 0x00;
-    PORTB=0x20;
-    TRISB= 0xxFF;
-    ANSELB = 0x01;
+
+    TRISB= 0xFF;
+    ANSELB =0x00;
+
 
 
 
 
 }
-# 116 "encm369_pic18.c"
+# 117 "encm369_pic18.c"
 void SysTickSetup(void)
 {
   G_u32SystemTime1ms = 0;
   G_u32SystemTime1s = 0;
 
 }
-# 138 "encm369_pic18.c"
+# 139 "encm369_pic18.c"
 void SystemSleep(void)
 {
 

@@ -31,9 +31,9 @@
 [v _ClockSetup ClockSetup `(v  1 e 1 0 ]
 "89
 [v _GpioSetup GpioSetup `(v  1 e 1 0 ]
-"116
+"117
 [v _SysTickSetup SysTickSetup `(v  1 e 1 0 ]
-"138
+"139
 [v _SystemSleep SystemSleep `(v  1 e 1 0 ]
 "35 C:\GithubEncm369\2021_Encm369\main.c
 [v _main main `(v  1 e 1 0 ]
@@ -70,29 +70,31 @@
 "95 C:\GithubEncm369\2021_Encm369\user_app.c
 [v _UserAppRun UserAppRun `(v  1 e 1 0 ]
 {
+"98
+[v UserAppRun@u32Current u32Current `ul  1 a 4 1 ]
 "97
-[v UserAppRun@u32Counter u32Counter `ul  1 a 4 0 ]
-"118
+[v UserAppRun@u32Previous u32Previous `ul  1 s 4 u32Previous ]
+"113
 } 0
 "76
 [v _UserAppInitialize UserAppInitialize `(v  1 e 1 0 ]
 {
 "80
 } 0
-"138 C:\GithubEncm369\2021_Encm369\encm369_pic18.c
+"139 C:\GithubEncm369\2021_Encm369\encm369_pic18.c
 [v _SystemSleep SystemSleep `(v  1 e 1 0 ]
 {
-"141
+"142
 } 0
-"116
+"117
 [v _SysTickSetup SysTickSetup `(v  1 e 1 0 ]
 {
-"121
+"122
 } 0
 "89
 [v _GpioSetup GpioSetup `(v  1 e 1 0 ]
 {
-"101
+"102
 } 0
 "70
 [v _ClockSetup ClockSetup `(v  1 e 1 0 ]
