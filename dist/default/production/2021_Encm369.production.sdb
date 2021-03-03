@@ -74,7 +74,7 @@
 "35 C:\GithubEncm369\2021_Encm369\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"68
+"71
 } 0
 "97 C:\GithubEncm369\2021_Encm369\user_app.c
 [v _UserAppRun UserAppRun `(v  1 e 1 0 ]
@@ -103,7 +103,7 @@
 [v TimeXus@u8LowInput u8LowInput `uc  1 a 1 2 ]
 "142
 [v TimeXus@u16Microseconds u16Microseconds `us  1 p 2 0 ]
-"160
+"157
 } 0
 "135
 [v _SystemSleep SystemSleep `(v  1 e 1 0 ]

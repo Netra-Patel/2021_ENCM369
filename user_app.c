@@ -107,7 +107,7 @@ void UserAppRun(void)
         
         if(su8Shift == 0x00) //if shifting left
         {
-            u8Value = u8Value << 2; //shift 2 left
+            u8Value = u8Value << 2 ; //shift 2 left
         }
         
         if(su8Shift == 0x01) //if shifting right

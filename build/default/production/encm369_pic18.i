@@ -27343,7 +27343,4 @@ void TimeXus(u16 u16Microseconds)
 
     T0CON0 = T0CON0 | 0x80;
 
-    while((PIR3 & 0x80) != 0x80)
-    {
-    }
 }

@@ -2663,21 +2663,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;encm369_pic18.c: 155:     T0CON0 = T0CON0 | 0x80;
 [e = _T0CON0 -> | -> _T0CON0 `i -> 128 `i `uc ]
 "157
-[; ;encm369_pic18.c: 157:     while((PIR3 & 0x80) != 0x80)
-[e $U 2277  ]
-[e :U 2278 ]
-"158
-[; ;encm369_pic18.c: 158:     {
-{
-"159
-[; ;encm369_pic18.c: 159:     }
-}
-[e :U 2277 ]
-"157
-[; ;encm369_pic18.c: 157:     while((PIR3 & 0x80) != 0x80)
-[e $ != & -> _PIR3 `i -> 128 `i -> 128 `i 2278  ]
-[e :U 2279 ]
-"160
-[; ;encm369_pic18.c: 160: }
+[; ;encm369_pic18.c: 157: }
 [e :UE 2276 ]
 }

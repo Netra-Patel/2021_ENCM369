@@ -27331,7 +27331,7 @@ void UserAppRun(void)
 
         if(su8Shift == 0x00)
         {
-            u8Value = u8Value << 2;
+            u8Value = u8Value << 2 ;
         }
 
         if(su8Shift == 0x01)

@@ -2595,7 +2595,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;user_app.c: 109:         {
 {
 "110
-[; ;user_app.c: 110:             u8Value = u8Value << 2;
+[; ;user_app.c: 110:             u8Value = u8Value << 2 ;
 [e = _u8Value -> << -> _u8Value `i -> 2 `i `uc ]
 "111
 [; ;user_app.c: 111:         }

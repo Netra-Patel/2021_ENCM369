@@ -154,9 +154,6 @@ void TimeXus(u16 u16Microseconds)
     
     T0CON0 = T0CON0 | 0x80;  //sets Timer0 enable to high
     
-    while((PIR3 & 0x80) != 0x80)    //Loop to check the interupt bit is high
-    {
-    }  
 } 
 /* end TimeXus () */
 /*--------------------------------------------------------------------------------------------------------------------*/

@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\netra\AppData\Local\Temp\spcg.o
+$C:\Users\netra\AppData\Local\Temp\s10.o
 idloc IDLOC 5 200000 200000 20 1
 init CODE 0 1FFFC 1FFFC 4 1
 reset_vec CODE 0 0 0 4 1
@@ -19,10 +19,10 @@ config CONFIG 4 300000 300000 A 1
 $dist/default/production\2021_Encm369.production.o
 cinit CODE 0 1FEBA 1FEBA 12 1
 idloc IDLOC 5 200000 200000 20 1
-text0 CODE 0 1FF04 1FF04 2E 1
+text0 CODE 0 1FF36 1FF36 3C 1
 text1 CODE 0 1FF72 1FF72 8A 1
 text2 CODE 0 1FEAA 1FEAA 10 1
-text3 CODE 0 1FF32 1FF32 40 1
+text3 CODE 0 1FF04 1FF04 32 1
 text4 CODE 0 1FEA8 1FEA8 2 1
 text5 CODE 0 1FEE2 1FEE2 22 1
 text6 CODE 0 1FECC 1FECC 16 1
@@ -110,18 +110,16 @@ $dist/default/production\2021_Encm369.production.o
 1FF02 text5 CODE >118:C:\GithubEncm369\2021_Encm369\encm369_pic18.c
 1FEA8 text4 CODE >135:C:\GithubEncm369\2021_Encm369\encm369_pic18.c
 1FEA8 text4 CODE >138:C:\GithubEncm369\2021_Encm369\encm369_pic18.c
-1FF32 text3 CODE >142:C:\GithubEncm369\2021_Encm369\encm369_pic18.c
-1FF32 text3 CODE >144:C:\GithubEncm369\2021_Encm369\encm369_pic18.c
-1FF3A text3 CODE >146:C:\GithubEncm369\2021_Encm369\encm369_pic18.c
-1FF42 text3 CODE >148:C:\GithubEncm369\2021_Encm369\encm369_pic18.c
-1FF46 text3 CODE >149:C:\GithubEncm369\2021_Encm369\encm369_pic18.c
-1FF4A text3 CODE >150:C:\GithubEncm369\2021_Encm369\encm369_pic18.c
-1FF50 text3 CODE >151:C:\GithubEncm369\2021_Encm369\encm369_pic18.c
-1FF56 text3 CODE >153:C:\GithubEncm369\2021_Encm369\encm369_pic18.c
-1FF5C text3 CODE >155:C:\GithubEncm369\2021_Encm369\encm369_pic18.c
-1FF62 text3 CODE >157:C:\GithubEncm369\2021_Encm369\encm369_pic18.c
-1FF62 text3 CODE >159:C:\GithubEncm369\2021_Encm369\encm369_pic18.c
-1FF70 text3 CODE >160:C:\GithubEncm369\2021_Encm369\encm369_pic18.c
+1FF04 text3 CODE >142:C:\GithubEncm369\2021_Encm369\encm369_pic18.c
+1FF04 text3 CODE >144:C:\GithubEncm369\2021_Encm369\encm369_pic18.c
+1FF0C text3 CODE >146:C:\GithubEncm369\2021_Encm369\encm369_pic18.c
+1FF14 text3 CODE >148:C:\GithubEncm369\2021_Encm369\encm369_pic18.c
+1FF18 text3 CODE >149:C:\GithubEncm369\2021_Encm369\encm369_pic18.c
+1FF1C text3 CODE >150:C:\GithubEncm369\2021_Encm369\encm369_pic18.c
+1FF22 text3 CODE >151:C:\GithubEncm369\2021_Encm369\encm369_pic18.c
+1FF28 text3 CODE >153:C:\GithubEncm369\2021_Encm369\encm369_pic18.c
+1FF2E text3 CODE >155:C:\GithubEncm369\2021_Encm369\encm369_pic18.c
+1FF34 text3 CODE >157:C:\GithubEncm369\2021_Encm369\encm369_pic18.c
 1FEAA text2 CODE >75:C:\GithubEncm369\2021_Encm369\user_app.c
 1FEAA text2 CODE >77:C:\GithubEncm369\2021_Encm369\user_app.c
 1FEAE text2 CODE >79:C:\GithubEncm369\2021_Encm369\user_app.c
@@ -144,27 +142,29 @@ $dist/default/production\2021_Encm369.production.o
 1FFF2 text1 CODE >128:C:\GithubEncm369\2021_Encm369\user_app.c
 1FFF6 text1 CODE >131:C:\GithubEncm369\2021_Encm369\user_app.c
 1FFFA text1 CODE >132:C:\GithubEncm369\2021_Encm369\user_app.c
-1FF04 text0 CODE >35:C:\GithubEncm369\2021_Encm369\main.c
-1FF04 text0 CODE >37:C:\GithubEncm369\2021_Encm369\main.c
-1FF06 text0 CODE >40:C:\GithubEncm369\2021_Encm369\main.c
-1FF0A text0 CODE >41:C:\GithubEncm369\2021_Encm369\main.c
-1FF0E text0 CODE >42:C:\GithubEncm369\2021_Encm369\main.c
-1FF12 text0 CODE >47:C:\GithubEncm369\2021_Encm369\main.c
-1FF16 text0 CODE >57:C:\GithubEncm369\2021_Encm369\main.c
-1FF1A text0 CODE >62:C:\GithubEncm369\2021_Encm369\main.c
-1FF1E text0 CODE >63:C:\GithubEncm369\2021_Encm369\main.c
-1FEBA cinit CODE >5098:C:\Users\netra\AppData\Local\Temp\spcg.s
-1FEBA cinit CODE >5100:C:\Users\netra\AppData\Local\Temp\spcg.s
-1FEBA cinit CODE >5103:C:\Users\netra\AppData\Local\Temp\spcg.s
-1FEBA cinit CODE >5129:C:\Users\netra\AppData\Local\Temp\spcg.s
-1FEBE cinit CODE >5130:C:\Users\netra\AppData\Local\Temp\spcg.s
-1FEC0 cinit CODE >5131:C:\Users\netra\AppData\Local\Temp\spcg.s
-1FEC0 cinit CODE >5132:C:\Users\netra\AppData\Local\Temp\spcg.s
-1FEC2 cinit CODE >5133:C:\Users\netra\AppData\Local\Temp\spcg.s
-1FEC4 cinit CODE >5134:C:\Users\netra\AppData\Local\Temp\spcg.s
-1FEC6 cinit CODE >5140:C:\Users\netra\AppData\Local\Temp\spcg.s
-1FEC6 cinit CODE >5142:C:\Users\netra\AppData\Local\Temp\spcg.s
-1FEC8 cinit CODE >5143:C:\Users\netra\AppData\Local\Temp\spcg.s
+1FF36 text0 CODE >35:C:\GithubEncm369\2021_Encm369\main.c
+1FF36 text0 CODE >37:C:\GithubEncm369\2021_Encm369\main.c
+1FF38 text0 CODE >40:C:\GithubEncm369\2021_Encm369\main.c
+1FF3C text0 CODE >41:C:\GithubEncm369\2021_Encm369\main.c
+1FF40 text0 CODE >42:C:\GithubEncm369\2021_Encm369\main.c
+1FF44 text0 CODE >47:C:\GithubEncm369\2021_Encm369\main.c
+1FF48 text0 CODE >57:C:\GithubEncm369\2021_Encm369\main.c
+1FF4C text0 CODE >62:C:\GithubEncm369\2021_Encm369\main.c
+1FF50 text0 CODE >63:C:\GithubEncm369\2021_Encm369\main.c
+1FF5C text0 CODE >64:C:\GithubEncm369\2021_Encm369\main.c
+1FF5C text0 CODE >66:C:\GithubEncm369\2021_Encm369\main.c
+1FEBA cinit CODE >5098:C:\Users\netra\AppData\Local\Temp\s10.s
+1FEBA cinit CODE >5100:C:\Users\netra\AppData\Local\Temp\s10.s
+1FEBA cinit CODE >5103:C:\Users\netra\AppData\Local\Temp\s10.s
+1FEBA cinit CODE >5129:C:\Users\netra\AppData\Local\Temp\s10.s
+1FEBE cinit CODE >5130:C:\Users\netra\AppData\Local\Temp\s10.s
+1FEC0 cinit CODE >5131:C:\Users\netra\AppData\Local\Temp\s10.s
+1FEC0 cinit CODE >5132:C:\Users\netra\AppData\Local\Temp\s10.s
+1FEC2 cinit CODE >5133:C:\Users\netra\AppData\Local\Temp\s10.s
+1FEC4 cinit CODE >5134:C:\Users\netra\AppData\Local\Temp\s10.s
+1FEC6 cinit CODE >5140:C:\Users\netra\AppData\Local\Temp\s10.s
+1FEC6 cinit CODE >5142:C:\Users\netra\AppData\Local\Temp\s10.s
+1FEC8 cinit CODE >5143:C:\Users\netra\AppData\Local\Temp\s10.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -183,24 +183,24 @@ __Hspace_1 517 0 ABS 0 - dist/default/production\2021_Encm369.production.o
 __Hspace_2 0 0 ABS 0 - dist/default/production\2021_Encm369.production.o
 __Hspace_4 60000A 0 ABS 0 - dist/default/production\2021_Encm369.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\2021_Encm369.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\netra\AppData\Local\Temp\spcg.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\netra\AppData\Local\Temp\s10.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\2021_Encm369.production.o
-__end_of_TimeXus 1FF72 0 CODE 0 text3 dist/default/production\2021_Encm369.production.o
+__end_of_TimeXus 1FF36 0 CODE 0 text3 dist/default/production\2021_Encm369.production.o
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\2021_Encm369.production.o
 _LATA 4BE 0 ABS 0 - dist/default/production\2021_Encm369.production.o
 _PIR3 4B1 0 ABS 0 - dist/default/production\2021_Encm369.production.o
-___sp 0 0 STACK 2 stack C:\Users\netra\AppData\Local\Temp\spcg.o
-_main 1FF04 0 CODE 0 text0 dist/default/production\2021_Encm369.production.o
-start 1FFFC 0 CODE 0 init C:\Users\netra\AppData\Local\Temp\spcg.o
+___sp 0 0 STACK 2 stack C:\Users\netra\AppData\Local\Temp\s10.o
+_main 1FF36 0 CODE 0 text0 dist/default/production\2021_Encm369.production.o
+start 1FFFC 0 CODE 0 init C:\Users\netra\AppData\Local\Temp\s10.o
 __size_of_main 0 0 ABS 0 - dist/default/production\2021_Encm369.production.o
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\2021_Encm369.production.o
 __size_of_SystemSleep 0 0 ABS 0 - dist/default/production\2021_Encm369.production.o
 __Hpowerup 0 0 CODE 0 powerup dist/default/production\2021_Encm369.production.o
-__accesstop 560 0 ABS 0 - C:\Users\netra\AppData\Local\Temp\spcg.o
-intlevel0 0 0 CODE 0 text C:\Users\netra\AppData\Local\Temp\spcg.o
-intlevel1 0 0 CODE 0 text C:\Users\netra\AppData\Local\Temp\spcg.o
-intlevel2 0 0 CODE 0 text C:\Users\netra\AppData\Local\Temp\spcg.o
-intlevel3 0 0 CODE 0 text C:\Users\netra\AppData\Local\Temp\spcg.o
+__accesstop 560 0 ABS 0 - C:\Users\netra\AppData\Local\Temp\s10.o
+intlevel0 0 0 CODE 0 text C:\Users\netra\AppData\Local\Temp\s10.o
+intlevel1 0 0 CODE 0 text C:\Users\netra\AppData\Local\Temp\s10.o
+intlevel2 0 0 CODE 0 text C:\Users\netra\AppData\Local\Temp\s10.o
+intlevel3 0 0 CODE 0 text C:\Users\netra\AppData\Local\Temp\s10.o
 TimeXus@u16Microseconds 511 0 COMRAM 1 cstackCOMRAM dist/default/production\2021_Encm369.production.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\2021_Encm369.production.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\2021_Encm369.production.o
@@ -210,8 +210,8 @@ _UserAppRun 1FF72 0 CODE 0 text1 dist/default/production\2021_Encm369.production
 _ANSELA 400 0 ABS 0 - dist/default/production\2021_Encm369.production.o
 _ANSELB 408 0 ABS 0 - dist/default/production\2021_Encm369.production.o
 _G_u32SystemTime1s 505 0 COMRAM 1 bssCOMRAM dist/default/production\2021_Encm369.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\netra\AppData\Local\Temp\spcg.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\netra\AppData\Local\Temp\spcg.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\netra\AppData\Local\Temp\s10.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\netra\AppData\Local\Temp\s10.o
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\2021_Encm369.production.o
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\2021_Encm369.production.o
 __size_of_UserAppInitialize 0 0 ABS 0 - dist/default/production\2021_Encm369.production.o
@@ -225,7 +225,7 @@ __end_of_UserAppRun 1FFFC 0 CODE 0 text1 dist/default/production\2021_Encm369.pr
 ___rparam_used 1 0 ABS 0 - dist/default/production\2021_Encm369.production.o
 _T0CON0 31A 0 ABS 0 - dist/default/production\2021_Encm369.production.o
 _T0CON1 31B 0 ABS 0 - dist/default/production\2021_Encm369.production.o
-_TimeXus 1FF32 0 CODE 0 text3 dist/default/production\2021_Encm369.production.o
+_TimeXus 1FF04 0 CODE 0 text3 dist/default/production\2021_Encm369.production.o
 __Hbank5 0 0 ABS 0 bank5 dist/default/production\2021_Encm369.production.o
 __Hbank6 0 0 ABS 0 bank6 dist/default/production\2021_Encm369.production.o
 __Hbank7 0 0 ABS 0 bank7 dist/default/production\2021_Encm369.production.o
@@ -277,7 +277,7 @@ __Hbank36 0 0 ABS 0 bank36 dist/default/production\2021_Encm369.production.o
 __Hbank37 0 0 ABS 0 bank37 dist/default/production\2021_Encm369.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\2021_Encm369.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production\2021_Encm369.production.o
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\netra\AppData\Local\Temp\spcg.o
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\netra\AppData\Local\Temp\s10.o
 _SystemSleep 1FEA8 0 CODE 0 text4 dist/default/production\2021_Encm369.production.o
 __Hcomram 0 0 ABS 0 comram dist/default/production\2021_Encm369.production.o
 __Hconfig 30000A 0 CONFIG 4 config dist/default/production\2021_Encm369.production.o
@@ -372,8 +372,8 @@ __end_of_SysTickSetup 1FF04 0 CODE 0 text5 dist/default/production\2021_Encm369.
 _UserAppInitialize 1FEAA 0 CODE 0 text2 dist/default/production\2021_Encm369.production.o
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\2021_Encm369.production.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\2021_Encm369.production.o
-stackhi 25FF 0 ABS 0 - C:\Users\netra\AppData\Local\Temp\spcg.o
-stacklo 560 0 ABS 0 - C:\Users\netra\AppData\Local\Temp\spcg.o
+stackhi 25FF 0 ABS 0 - C:\Users\netra\AppData\Local\Temp\s10.o
+stacklo 560 0 ABS 0 - C:\Users\netra\AppData\Local\Temp\s10.o
 UserAppRun@su8Shift 50F 0 COMRAM 1 bssCOMRAM dist/default/production\2021_Encm369.production.o
 __Lirdata 0 0 CODE 0 irdata dist/default/production\2021_Encm369.production.o
 __Lspace_0 0 0 ABS 0 - dist/default/production\2021_Encm369.production.o
@@ -390,16 +390,16 @@ TimeXus@u8HighInput 514 0 COMRAM 1 cstackCOMRAM dist/default/production\2021_Enc
 __Lramtop 2600 0 RAM 0 ramtop dist/default/production\2021_Encm369.production.o
 __Lrparam 0 0 COMRAM 1 rparam dist/default/production\2021_Encm369.production.o
 __pcinit 1FEBA 0 CODE 0 cinit dist/default/production\2021_Encm369.production.o
-__ptext0 1FF04 0 CODE 0 text0 dist/default/production\2021_Encm369.production.o
+__ptext0 1FF36 0 CODE 0 text0 dist/default/production\2021_Encm369.production.o
 __ptext1 1FF72 0 CODE 0 text1 dist/default/production\2021_Encm369.production.o
 __ptext2 1FEAA 0 CODE 0 text2 dist/default/production\2021_Encm369.production.o
-__ptext3 1FF32 0 CODE 0 text3 dist/default/production\2021_Encm369.production.o
+__ptext3 1FF04 0 CODE 0 text3 dist/default/production\2021_Encm369.production.o
 __ptext4 1FEA8 0 CODE 0 text4 dist/default/production\2021_Encm369.production.o
 __ptext5 1FEE2 0 CODE 0 text5 dist/default/production\2021_Encm369.production.o
 __ptext6 1FECC 0 CODE 0 text6 dist/default/production\2021_Encm369.production.o
 __ptext7 1FEA6 0 CODE 0 text7 dist/default/production\2021_Encm369.production.o
 __Lstruct 0 0 COMRAM 1 struct dist/default/production\2021_Encm369.production.o
-__ramtop 2600 0 RAM 0 ramtop C:\Users\netra\AppData\Local\Temp\spcg.o
+__ramtop 2600 0 RAM 0 ramtop C:\Users\netra\AppData\Local\Temp\s10.o
 __Lpowerup 0 0 CODE 0 powerup dist/default/production\2021_Encm369.production.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\2021_Encm369.production.o
 _ClockSetup 1FEA6 0 CODE 0 text7 dist/default/production\2021_Encm369.production.o
@@ -412,7 +412,7 @@ __Libigdata 0 0 CODE 0 ibigdata dist/default/production\2021_Encm369.production.
 __size_of_TimeXus 0 0 ABS 0 - dist/default/production\2021_Encm369.production.o
 __Lclrtext 0 0 ABS 0 clrtext dist/default/production\2021_Encm369.production.o
 __pcstackCOMRAM 511 0 COMRAM 1 cstackCOMRAM dist/default/production\2021_Encm369.production.o
-__end_of_main 1FF32 0 CODE 0 text0 dist/default/production\2021_Encm369.production.o
+__end_of_main 1FF72 0 CODE 0 text0 dist/default/production\2021_Encm369.production.o
 _TMR0H 319 0 ABS 0 - dist/default/production\2021_Encm369.production.o
 _TMR0L 318 0 ABS 0 - dist/default/production\2021_Encm369.production.o
 _TRISA 4C6 0 ABS 0 - dist/default/production\2021_Encm369.production.o
@@ -460,10 +460,10 @@ __Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\2021_Encm369.p
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cinit 0 1FEBA 1FEBA 12 1
-text0 0 1FF04 1FF04 2E 1
+text0 0 1FF36 1FF36 3C 1
 text1 0 1FF72 1FF72 8A 1
 text2 0 1FEAA 1FEAA 10 1
-text3 0 1FF32 1FF32 40 1
+text3 0 1FF04 1FF04 32 1
 text4 0 1FEA8 1FEA8 2 1
 text5 0 1FEE2 1FEE2 22 1
 text6 0 1FECC 1FECC 16 1
