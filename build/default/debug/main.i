@@ -27283,6 +27283,7 @@ void GpioSetup(void);
 
 void SysTickSetup(void);
 void SystemSleep(void);
+void TimeXus(u16 u16Microseconds);
 # 101 "./configuration.h" 2
 
 
@@ -27333,9 +27334,10 @@ void main(void)
 
 
 
-                   ;
+    (LATA &= 0x7F);
     SystemSleep();
-                  ;
+    TimeXus(1);
+    (LATA |= 0x80);
 
   }
 

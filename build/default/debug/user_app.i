@@ -27279,6 +27279,7 @@ void GpioSetup(void);
 
 void SysTickSetup(void);
 void SystemSleep(void);
+void TimeXus(u16 u16Microseconds);
 # 101 "./configuration.h" 2
 
 
@@ -27309,19 +27310,21 @@ extern volatile u32 G_u32SystemFlags;
 # 76 "user_app.c"
 void UserAppInitialize(void)
 {
+    LATA=0x80;
+
+    T0CON0=0x90;
+    T0CON1=0x54;
 
 
 }
-# 95 "user_app.c"
+# 98 "user_app.c"
 void UserAppRun(void)
 {
-    u32 u32Counter = 0x80;
-    while(u32Counter < 0xBF)
-    {
-        LATA = u32Counter;
-        _delay(0x2191C0);
-        u32Counter++;
-    }
+
+    u8 u8LataValue;
+    LATA++;
+    u8LataValue= LATA & 0x7F;
+    LATA = u8LataValue | 0x80;
 
 
 }

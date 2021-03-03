@@ -14,6 +14,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 "38
 [; ;encm369_pic18.c: 38: extern volatile u32 G_u32SystemTime1s;
 [v _G_u32SystemTime1s `Vul ~T0 @X0 0 e ]
+"22627 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
+[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 22627: extern volatile unsigned char T0CON0 __attribute__((address(0x31A)));
+[v _T0CON0 `Vuc ~T0 @X0 0 e@794 ]
+"22235
+[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 22235: extern volatile unsigned char TMR0L __attribute__((address(0x318)));
+[v _TMR0L `Vuc ~T0 @X0 0 e@792 ]
+"22373
+[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 22373: extern volatile unsigned char TMR0H __attribute__((address(0x319)));
+[v _TMR0H `Vuc ~T0 @X0 0 e@793 ]
+"44870
+[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 44870: extern volatile unsigned char PIR3 __attribute__((address(0x4B1)));
+[v _PIR3 `Vuc ~T0 @X0 0 e@1201 ]
 "30 ./configuration.h
 [p x FEXTOSC  =  OFF     ]
 "31
@@ -2597,4 +2609,63 @@ Version 4.0 HI-TECH Software Intermediate Code
 "136
 [; ;encm369_pic18.c: 136: }
 [e :UE 2275 ]
+}
+"140
+[; ;encm369_pic18.c: 140: void TimeXus(u16 u16Microseconds)
+[v _TimeXus `(v ~T0 @X0 1 ef1`us ]
+"141
+[; ;encm369_pic18.c: 141: {
+{
+[e :U _TimeXus ]
+"140
+[; ;encm369_pic18.c: 140: void TimeXus(u16 u16Microseconds)
+[v _u16Microseconds `us ~T0 @X0 1 r1 ]
+"141
+[; ;encm369_pic18.c: 141: {
+[f ]
+"142
+[; ;encm369_pic18.c: 142:     T0CON0=T0CON0 & 0x7F;
+[e = _T0CON0 -> & -> _T0CON0 `i -> 127 `i `uc ]
+"144
+[; ;encm369_pic18.c: 144:     u16 u16TimeDifference = 0xFFFF-u16Microseconds;
+[v _u16TimeDifference `us ~T0 @X0 1 a ]
+[e = _u16TimeDifference -> - -> 65535 `ui -> _u16Microseconds `ui `us ]
+"145
+[; ;encm369_pic18.c: 145:     u8 u8LowInput = u16TimeDifference & 0xFF;
+[v _u8LowInput `uc ~T0 @X0 1 a ]
+[e = _u8LowInput -> & -> _u16TimeDifference `ui -> -> 255 `i `ui `uc ]
+"146
+[; ;encm369_pic18.c: 146:     u8 u8HighInput =(u16TimeDifference>>8) & 0xFF;
+[v _u8HighInput `uc ~T0 @X0 1 a ]
+[e = _u8HighInput -> & >> -> _u16TimeDifference `ui -> 8 `i -> -> 255 `i `ui `uc ]
+"148
+[; ;encm369_pic18.c: 148:     TMR0L = u8LowInput;
+[e = _TMR0L _u8LowInput ]
+"149
+[; ;encm369_pic18.c: 149:     TMR0H = u8HighInput;
+[e = _TMR0H _u8HighInput ]
+"150
+[; ;encm369_pic18.c: 150:     PIR3 = PIR3 & 0x7F ;
+[e = _PIR3 -> & -> _PIR3 `i -> 127 `i `uc ]
+"151
+[; ;encm369_pic18.c: 151:     T0CON0 = T0CON0 | 0x80;
+[e = _T0CON0 -> | -> _T0CON0 `i -> 128 `i `uc ]
+"153
+[; ;encm369_pic18.c: 153:     while((PIR3 & 0x80)!= 0x80)
+[e $U 2277  ]
+[e :U 2278 ]
+"154
+[; ;encm369_pic18.c: 154:     {
+{
+"156
+[; ;encm369_pic18.c: 156:     }
+}
+[e :U 2277 ]
+"153
+[; ;encm369_pic18.c: 153:     while((PIR3 & 0x80)!= 0x80)
+[e $ != & -> _PIR3 `i -> 128 `i -> 128 `i 2278  ]
+[e :U 2279 ]
+"157
+[; ;encm369_pic18.c: 157: }
+[e :UE 2276 ]
 }

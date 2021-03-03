@@ -27279,6 +27279,7 @@ void GpioSetup(void);
 
 void SysTickSetup(void);
 void SystemSleep(void);
+void TimeXus(u16 u16Microseconds);
 # 101 "./configuration.h" 2
 
 
@@ -27321,4 +27322,25 @@ void SysTickSetup(void)
 void SystemSleep(void)
 {
 
+}
+
+
+
+void TimeXus(u16 u16Microseconds)
+{
+    T0CON0=T0CON0 & 0x7F;
+
+    u16 u16TimeDifference = 0xFFFF-u16Microseconds;
+    u8 u8LowInput = u16TimeDifference & 0xFF;
+    u8 u8HighInput =(u16TimeDifference>>8) & 0xFF;
+
+    TMR0L = u8LowInput;
+    TMR0H = u8HighInput;
+    PIR3 = PIR3 & 0x7F ;
+    T0CON0 = T0CON0 | 0x80;
+
+    while((PIR3 & 0x80)!= 0x80)
+    {
+
+    }
 }

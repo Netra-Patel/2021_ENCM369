@@ -2,10 +2,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "45585 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
 [; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 45585: extern volatile unsigned char LATA __attribute__((address(0x4BE)));
 [v _LATA `Vuc ~T0 @X0 0 e@1214 ]
-[v F183 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\builtins.h
-[v __delay `JF183 ~T0 @X0 0 e ]
-[p i __delay ]
+"22627
+[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 22627: extern volatile unsigned char T0CON0 __attribute__((address(0x31A)));
+[v _T0CON0 `Vuc ~T0 @X0 0 e@794 ]
+"22725
+[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 22725: extern volatile unsigned char T0CON1 __attribute__((address(0x31B)));
+[v _T0CON1 `Vuc ~T0 @X0 0 e@795 ]
 "30 ./configuration.h
 [p x FEXTOSC  =  OFF     ]
 "31
@@ -2538,47 +2540,40 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _UserAppInitialize ]
 [f ]
+"78
+[; ;user_app.c: 78:     LATA=0x80;
+[e = _LATA -> -> 128 `i `uc ]
 "80
-[; ;user_app.c: 80: }
+[; ;user_app.c: 80:     T0CON0=0x90;
+[e = _T0CON0 -> -> 144 `i `uc ]
+"81
+[; ;user_app.c: 81:     T0CON1=0x54;
+[e = _T0CON1 -> -> 84 `i `uc ]
+"84
+[; ;user_app.c: 84: }
 [e :UE 2272 ]
 }
-"95
-[; ;user_app.c: 95: void UserAppRun(void)
+"98
+[; ;user_app.c: 98: void UserAppRun(void)
 [v _UserAppRun `(v ~T0 @X0 1 ef ]
-"96
-[; ;user_app.c: 96: {
+"99
+[; ;user_app.c: 99: {
 {
 [e :U _UserAppRun ]
 [f ]
-"97
-[; ;user_app.c: 97:     u32 u32Counter = 0x80;
-[v _u32Counter `ul ~T0 @X0 1 a ]
-[e = _u32Counter -> -> -> 128 `i `l `ul ]
-"98
-[; ;user_app.c: 98:     while(u32Counter < 0xBF)
-[e $U 2274  ]
-[e :U 2275 ]
-"99
-[; ;user_app.c: 99:     {
-{
-"100
-[; ;user_app.c: 100:         LATA = u32Counter;
-[e = _LATA -> _u32Counter `uc ]
 "101
-[; ;user_app.c: 101:         _delay(0x2191C0);
-[e ( __delay (1 -> -> 2200000 `l `ul ]
+[; ;user_app.c: 101:     u8 u8LataValue;
+[v _u8LataValue `uc ~T0 @X0 1 a ]
 "102
-[; ;user_app.c: 102:         u32Counter++;
-[e ++ _u32Counter -> -> -> 1 `i `l `ul ]
+[; ;user_app.c: 102:     LATA++;
+[e ++ _LATA -> -> 1 `i `Vuc ]
 "103
-[; ;user_app.c: 103:     }
-}
-[e :U 2274 ]
-"98
-[; ;user_app.c: 98:     while(u32Counter < 0xBF)
-[e $ < _u32Counter -> -> -> 191 `i `l `ul 2275  ]
-[e :U 2276 ]
-"106
-[; ;user_app.c: 106: }
+[; ;user_app.c: 103:     u8LataValue= LATA & 0x7F;
+[e = _u8LataValue -> & -> _LATA `i -> 127 `i `uc ]
+"104
+[; ;user_app.c: 104:     LATA = u8LataValue | 0x80;
+[e = _LATA -> | -> _u8LataValue `i -> 128 `i `uc ]
+"107
+[; ;user_app.c: 107: }
 [e :UE 2273 ]
 }
