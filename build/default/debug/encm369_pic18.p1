@@ -8,6 +8,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "45840
 [; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 45840: extern volatile unsigned char TRISA __attribute__((address(0x4C6)));
 [v _TRISA `Vuc ~T0 @X0 0 e@1222 ]
+"45902
+[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 45902: extern volatile unsigned char TRISB __attribute__((address(0x4C7)));
+[v _TRISB `Vuc ~T0 @X0 0 e@1223 ]
+"38414
+[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 38414: extern volatile unsigned char ANSELB __attribute__((address(0x408)));
+[v _ANSELB `Vuc ~T0 @X0 0 e@1032 ]
 "37 encm369_pic18.c
 [; ;encm369_pic18.c: 37: extern volatile u32 G_u32SystemTime1ms;
 [v _G_u32SystemTime1ms `Vul ~T0 @X0 0 e ]
@@ -2576,96 +2582,102 @@ Version 4.0 HI-TECH Software Intermediate Code
 "93
 [; ;encm369_pic18.c: 93:     TRISA = 0x00;
 [e = _TRISA -> -> 0 `i `uc ]
+"95
+[; ;encm369_pic18.c: 95:     TRISB = 0xFF;
+[e = _TRISB -> -> 255 `i `uc ]
 "96
-[; ;encm369_pic18.c: 96: }
+[; ;encm369_pic18.c: 96:     ANSELB = 0x00;
+[e = _ANSELB -> -> 0 `i `uc ]
+"98
+[; ;encm369_pic18.c: 98: }
 [e :UE 2273 ]
 }
-"111
-[; ;encm369_pic18.c: 111: void SysTickSetup(void)
+"113
+[; ;encm369_pic18.c: 113: void SysTickSetup(void)
 [v _SysTickSetup `(v ~T0 @X0 1 ef ]
-"112
-[; ;encm369_pic18.c: 112: {
+"114
+[; ;encm369_pic18.c: 114: {
 {
 [e :U _SysTickSetup ]
 [f ]
-"113
-[; ;encm369_pic18.c: 113:   G_u32SystemTime1ms = 0;
+"115
+[; ;encm369_pic18.c: 115:   G_u32SystemTime1ms = 0;
 [e = _G_u32SystemTime1ms -> -> -> 0 `i `l `ul ]
-"114
-[; ;encm369_pic18.c: 114:   G_u32SystemTime1s = 0;
-[e = _G_u32SystemTime1s -> -> -> 0 `i `l `ul ]
 "116
-[; ;encm369_pic18.c: 116: }
+[; ;encm369_pic18.c: 116:   G_u32SystemTime1s = 0;
+[e = _G_u32SystemTime1s -> -> -> 0 `i `l `ul ]
+"118
+[; ;encm369_pic18.c: 118: }
 [e :UE 2274 ]
 }
-"133
-[; ;encm369_pic18.c: 133: void SystemSleep(void)
+"135
+[; ;encm369_pic18.c: 135: void SystemSleep(void)
 [v _SystemSleep `(v ~T0 @X0 1 ef ]
-"134
-[; ;encm369_pic18.c: 134: {
+"136
+[; ;encm369_pic18.c: 136: {
 {
 [e :U _SystemSleep ]
 [f ]
-"136
-[; ;encm369_pic18.c: 136: }
+"138
+[; ;encm369_pic18.c: 138: }
 [e :UE 2275 ]
 }
-"140
-[; ;encm369_pic18.c: 140: void TimeXus(u16 u16Microseconds)
+"142
+[; ;encm369_pic18.c: 142: void TimeXus(u16 u16Microseconds)
 [v _TimeXus `(v ~T0 @X0 1 ef1`us ]
-"141
-[; ;encm369_pic18.c: 141: {
+"143
+[; ;encm369_pic18.c: 143: {
 {
 [e :U _TimeXus ]
-"140
-[; ;encm369_pic18.c: 140: void TimeXus(u16 u16Microseconds)
-[v _u16Microseconds `us ~T0 @X0 1 r1 ]
-"141
-[; ;encm369_pic18.c: 141: {
-[f ]
 "142
-[; ;encm369_pic18.c: 142:     T0CON0=T0CON0 & 0x7F;
-[e = _T0CON0 -> & -> _T0CON0 `i -> 127 `i `uc ]
+[; ;encm369_pic18.c: 142: void TimeXus(u16 u16Microseconds)
+[v _u16Microseconds `us ~T0 @X0 1 r1 ]
+"143
+[; ;encm369_pic18.c: 143: {
+[f ]
 "144
-[; ;encm369_pic18.c: 144:     u16 u16TimeDifference = 0xFFFF-u16Microseconds;
-[v _u16TimeDifference `us ~T0 @X0 1 a ]
-[e = _u16TimeDifference -> - -> 65535 `ui -> _u16Microseconds `ui `us ]
-"145
-[; ;encm369_pic18.c: 145:     u8 u8LowInput = u16TimeDifference & 0xFF;
-[v _u8LowInput `uc ~T0 @X0 1 a ]
-[e = _u8LowInput -> & -> _u16TimeDifference `ui -> -> 255 `i `ui `uc ]
+[; ;encm369_pic18.c: 144:     T0CON0 = T0CON0 & 0x7F;
+[e = _T0CON0 -> & -> _T0CON0 `i -> 127 `i `uc ]
 "146
-[; ;encm369_pic18.c: 146:     u8 u8HighInput =(u16TimeDifference>>8) & 0xFF;
-[v _u8HighInput `uc ~T0 @X0 1 a ]
-[e = _u8HighInput -> & >> -> _u16TimeDifference `ui -> 8 `i -> -> 255 `i `ui `uc ]
+[; ;encm369_pic18.c: 146:     u16 u16TimerDifference = 0xFFFF - u16Microseconds;
+[v _u16TimerDifference `us ~T0 @X0 1 a ]
+[e = _u16TimerDifference -> - -> 65535 `ui -> _u16Microseconds `ui `us ]
 "148
-[; ;encm369_pic18.c: 148:     TMR0L = u8LowInput;
-[e = _TMR0L _u8LowInput ]
+[; ;encm369_pic18.c: 148:     u8 u8LowInput = u16TimerDifference & 0xFF;
+[v _u8LowInput `uc ~T0 @X0 1 a ]
+[e = _u8LowInput -> & -> _u16TimerDifference `ui -> -> 255 `i `ui `uc ]
 "149
-[; ;encm369_pic18.c: 149:     TMR0H = u8HighInput;
-[e = _TMR0H _u8HighInput ]
+[; ;encm369_pic18.c: 149:     u8 u8HighInput = (u16TimerDifference >> 8) & 0xFF;
+[v _u8HighInput `uc ~T0 @X0 1 a ]
+[e = _u8HighInput -> & >> -> _u16TimerDifference `ui -> 8 `i -> -> 255 `i `ui `uc ]
 "150
-[; ;encm369_pic18.c: 150:     PIR3 = PIR3 & 0x7F ;
-[e = _PIR3 -> & -> _PIR3 `i -> 127 `i `uc ]
+[; ;encm369_pic18.c: 150:     TMR0L = u8LowInput;
+[e = _TMR0L _u8LowInput ]
 "151
-[; ;encm369_pic18.c: 151:     T0CON0 = T0CON0 | 0x80;
-[e = _T0CON0 -> | -> _T0CON0 `i -> 128 `i `uc ]
+[; ;encm369_pic18.c: 151:     TMR0H = u8HighInput;
+[e = _TMR0H _u8HighInput ]
 "153
-[; ;encm369_pic18.c: 153:     while((PIR3 & 0x80)!= 0x80)
+[; ;encm369_pic18.c: 153:     PIR3 = PIR3 & 0x7F;
+[e = _PIR3 -> & -> _PIR3 `i -> 127 `i `uc ]
+"155
+[; ;encm369_pic18.c: 155:     T0CON0 = T0CON0 | 0x80;
+[e = _T0CON0 -> | -> _T0CON0 `i -> 128 `i `uc ]
+"157
+[; ;encm369_pic18.c: 157:     while((PIR3 & 0x80) != 0x80)
 [e $U 2277  ]
 [e :U 2278 ]
-"154
-[; ;encm369_pic18.c: 154:     {
+"158
+[; ;encm369_pic18.c: 158:     {
 {
-"156
-[; ;encm369_pic18.c: 156:     }
+"159
+[; ;encm369_pic18.c: 159:     }
 }
 [e :U 2277 ]
-"153
-[; ;encm369_pic18.c: 153:     while((PIR3 & 0x80)!= 0x80)
+"157
+[; ;encm369_pic18.c: 157:     while((PIR3 & 0x80) != 0x80)
 [e $ != & -> _PIR3 `i -> 128 `i -> 128 `i 2278  ]
 [e :U 2279 ]
-"157
-[; ;encm369_pic18.c: 157: }
+"160
+[; ;encm369_pic18.c: 160: }
 [e :UE 2276 ]
 }

@@ -27307,24 +27307,50 @@ volatile u8 G_u8UserAppFlags;
 extern volatile u32 G_u32SystemTime1ms;
 extern volatile u32 G_u32SystemTime1s;
 extern volatile u32 G_u32SystemFlags;
-# 76 "user_app.c"
+# 75 "user_app.c"
 void UserAppInitialize(void)
 {
-    LATA=0x80;
+    LATA=0x81;
 
     T0CON0=0x90;
     T0CON1=0x54;
 
 
 }
-# 98 "user_app.c"
+# 97 "user_app.c"
 void UserAppRun(void)
 {
+    static u16 su16Counter = 0x0000;
+    static u8 su8Shift = 0x00;
+    u8 u8Value;
 
-    u8 u8LataValue;
-    LATA++;
-    u8LataValue= LATA & 0x7F;
-    LATA = u8LataValue | 0x80;
+    if(su16Counter == 0x01F4)
+    {
+        su16Counter = 0x0000;
+        u8Value = LATA & 0x7F;
+
+        if(su8Shift == 0x00)
+        {
+            u8Value = u8Value << 2;
+        }
+
+        if(su8Shift == 0x01)
+        {
+            u8Value = u8Value >> 2;
+        }
+
+        LATA = u8Value | 0x80;
 
 
+        if(u8Value == 0x10)
+        {
+            su8Shift = 1;
+        }
+
+        if(u8Value == 0x01)
+        {
+            su8Shift = 0;
+        }
+    }
+    su16Counter++;
 }

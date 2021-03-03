@@ -27334,10 +27334,10 @@ void main(void)
 
 
 
-    (LATA &= 0x7F);
+                   ;
     SystemSleep();
-    TimeXus(1);
-    (LATA |= 0x80);
+    TimeXus(0x01F4);
+                  ;
 
   }
 

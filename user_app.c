@@ -71,11 +71,10 @@ Requires:
 
 Promises:
 - NONE
-
 */
 void UserAppInitialize(void)
 {
-    LATA=0x80;      // LED 
+    LATA=0x81;      // LED 
     
     T0CON0=0x90;
     T0CON1=0x54;
@@ -97,13 +96,39 @@ Promises:
 */
 void UserAppRun(void)
 {
-    
-    u8 u8LataValue;
-    LATA++;
-    u8LataValue= LATA & 0x7F;
-    LATA = u8LataValue | 0x80;
-    
-    
+    static u16 su16Counter = 0x0000;
+    static u8 su8Shift = 0x00;   //0 shifts left, 1 shifts right
+    u8 u8Value;
+
+    if(su16Counter == 0x01F4)   //if = 500 or 1ms total
+    {
+        su16Counter = 0x0000;  //reset counter
+        u8Value = LATA & 0x7F;  //bitmask LATA 
+        
+        if(su8Shift == 0x00) //if shifting left
+        {
+            u8Value = u8Value << 2; //shift 2 left
+        }
+        
+        if(su8Shift == 0x01) //if shifting right
+        {
+            u8Value = u8Value >> 2;  //shift 2 right
+        }
+        
+        LATA = u8Value | 0x80;  //give value back to LATA 
+  
+         
+        if(u8Value == 0x10) //reached far left point
+        {
+            su8Shift = 1; //change direction to right
+        }
+        
+        if(u8Value == 0x01) //reached far right point
+        {
+            su8Shift = 0; //change direction to left
+        }
+    }
+    su16Counter++;
 } /* end UserAppRun */
 
 

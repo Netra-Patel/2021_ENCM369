@@ -27309,16 +27309,18 @@ void GpioSetup(void)
     ANSELA = 0x00;
     TRISA = 0x00;
 
+    TRISB = 0xFF;
+    ANSELB = 0x00;
 
 }
-# 111 "encm369_pic18.c"
+# 113 "encm369_pic18.c"
 void SysTickSetup(void)
 {
   G_u32SystemTime1ms = 0;
   G_u32SystemTime1s = 0;
 
 }
-# 133 "encm369_pic18.c"
+# 135 "encm369_pic18.c"
 void SystemSleep(void)
 {
 
@@ -27328,19 +27330,20 @@ void SystemSleep(void)
 
 void TimeXus(u16 u16Microseconds)
 {
-    T0CON0=T0CON0 & 0x7F;
+    T0CON0 = T0CON0 & 0x7F;
 
-    u16 u16TimeDifference = 0xFFFF-u16Microseconds;
-    u8 u8LowInput = u16TimeDifference & 0xFF;
-    u8 u8HighInput =(u16TimeDifference>>8) & 0xFF;
+    u16 u16TimerDifference = 0xFFFF - u16Microseconds;
 
+    u8 u8LowInput = u16TimerDifference & 0xFF;
+    u8 u8HighInput = (u16TimerDifference >> 8) & 0xFF;
     TMR0L = u8LowInput;
     TMR0H = u8HighInput;
-    PIR3 = PIR3 & 0x7F ;
+
+    PIR3 = PIR3 & 0x7F;
+
     T0CON0 = T0CON0 | 0x80;
 
-    while((PIR3 & 0x80)!= 0x80)
+    while((PIR3 & 0x80) != 0x80)
     {
-
     }
 }

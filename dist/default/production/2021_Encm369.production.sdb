@@ -31,17 +31,17 @@
 [v _ClockSetup ClockSetup `(v  1 e 1 0 ]
 "89
 [v _GpioSetup GpioSetup `(v  1 e 1 0 ]
-"111
+"113
 [v _SysTickSetup SysTickSetup `(v  1 e 1 0 ]
-"133
+"135
 [v _SystemSleep SystemSleep `(v  1 e 1 0 ]
-"140
+"142
 [v _TimeXus TimeXus `(v  1 e 1 0 ]
 "35 C:\GithubEncm369\2021_Encm369\main.c
 [v _main main `(v  1 e 1 0 ]
-"76 C:\GithubEncm369\2021_Encm369\user_app.c
+"75 C:\GithubEncm369\2021_Encm369\user_app.c
 [v _UserAppInitialize UserAppInitialize `(v  1 e 1 0 ]
-"98
+"97
 [v _UserAppRun UserAppRun `(v  1 e 1 0 ]
 "22235 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
 [v _TMR0L TMR0L `VEuc  1 e 1 @792 ]
@@ -53,12 +53,16 @@
 [v _T0CON1 T0CON1 `VEuc  1 e 1 @795 ]
 "37918
 [v _ANSELA ANSELA `VEuc  1 e 1 @1024 ]
+"38414
+[v _ANSELB ANSELB `VEuc  1 e 1 @1032 ]
 "44870
 [v _PIR3 PIR3 `VEuc  1 e 1 @1201 ]
 "45585
 [v _LATA LATA `VEuc  1 e 1 @1214 ]
 "45840
 [v _TRISA TRISA `VEuc  1 e 1 @1222 ]
+"45902
+[v _TRISB TRISB `VEuc  1 e 1 @1223 ]
 "14 C:\GithubEncm369\2021_Encm369\main.c
 [v _G_u32SystemTime1ms G_u32SystemTime1ms `VEul  1 e 4 0 ]
 "15
@@ -72,45 +76,49 @@
 {
 "68
 } 0
-"98 C:\GithubEncm369\2021_Encm369\user_app.c
+"97 C:\GithubEncm369\2021_Encm369\user_app.c
 [v _UserAppRun UserAppRun `(v  1 e 1 0 ]
 {
 "101
-[v UserAppRun@u8LataValue u8LataValue `uc  1 a 1 0 ]
-"107
+[v UserAppRun@u8Value u8Value `uc  1 a 1 0 ]
+"99
+[v UserAppRun@su16Counter su16Counter `us  1 s 2 su16Counter ]
+"100
+[v UserAppRun@su8Shift su8Shift `uc  1 s 1 su8Shift ]
+"132
 } 0
-"76
+"75
 [v _UserAppInitialize UserAppInitialize `(v  1 e 1 0 ]
 {
-"84
+"83
 } 0
-"140 C:\GithubEncm369\2021_Encm369\encm369_pic18.c
+"142 C:\GithubEncm369\2021_Encm369\encm369_pic18.c
 [v _TimeXus TimeXus `(v  1 e 1 0 ]
 {
-"144
-[v TimeXus@u16TimeDifference u16TimeDifference `us  1 a 2 4 ]
 "146
+[v TimeXus@u16TimerDifference u16TimerDifference `us  1 a 2 4 ]
+"149
 [v TimeXus@u8HighInput u8HighInput `uc  1 a 1 3 ]
-"145
+"148
 [v TimeXus@u8LowInput u8LowInput `uc  1 a 1 2 ]
-"140
+"142
 [v TimeXus@u16Microseconds u16Microseconds `us  1 p 2 0 ]
-"157
+"160
 } 0
-"133
+"135
 [v _SystemSleep SystemSleep `(v  1 e 1 0 ]
 {
-"136
+"138
 } 0
-"111
+"113
 [v _SysTickSetup SysTickSetup `(v  1 e 1 0 ]
 {
-"116
+"118
 } 0
 "89
 [v _GpioSetup GpioSetup `(v  1 e 1 0 ]
 {
-"96
+"98
 } 0
 "70
 [v _ClockSetup ClockSetup `(v  1 e 1 0 ]

@@ -91,8 +91,10 @@ void GpioSetup(void)
     LATA = 0x80; //Set data latch RA7 
     ANSELA = 0x00; //0 means digital function, 1 means analog function
     TRISA = 0x00; // input=1, output=0
-  
-  
+    
+    TRISB = 0xFF;   
+    ANSELB = 0x00;  //set PORTB to digital
+ 
 } /* end GpioSetup() */
 
 
@@ -139,20 +141,21 @@ void SystemSleep(void)
 
 void TimeXus(u16 u16Microseconds)
 {
-    T0CON0=T0CON0 & 0x7F;
+    T0CON0 = T0CON0 & 0x7F;   //sets Timer0 enable tolow
     
-    u16 u16TimeDifference = 0xFFFF-u16Microseconds;
-    u8 u8LowInput = u16TimeDifference & 0xFF;
-    u8 u8HighInput =(u16TimeDifference>>8) & 0xFF;
+    u16 u16TimerDifference = 0xFFFF - u16Microseconds;  //find remaining time before overflow
     
-    TMR0L = u8LowInput;
-    TMR0H = u8HighInput;
-    PIR3 = PIR3 & 0x7F ;       
-    T0CON0 = T0CON0 | 0x80;
+    u8 u8LowInput = u16TimerDifference & 0xFF;   //bitmask 8 LSBs
+    u8 u8HighInput = (u16TimerDifference >> 8) & 0xFF;  //bitmask 8 MSBs
+    TMR0L = u8LowInput;  //preload Timer0 8 LSBs
+    TMR0H = u8HighInput; //preload Timer0 8 MSBs
     
-    while((PIR3 & 0x80)!= 0x80)
+    PIR3 = PIR3 & 0x7F;  //sets TMR0IF to low
+    
+    T0CON0 = T0CON0 | 0x80;  //sets Timer0 enable to high
+    
+    while((PIR3 & 0x80) != 0x80)    //Loop to check the interupt bit is high
     {
-        
     }  
 } 
 /* end TimeXus () */
