@@ -74,10 +74,10 @@ Promises:
 */
 void UserAppInitialize(void)
 {
-    LATA=0x81;      // LED 
+    LATA=0x81;      //Initialize LEDs
     
-    T0CON0=0x90;
-    T0CON1=0x54;
+    T0CON0=0x90;    //Set enable, 16-bit, postscaler
+    T0CON1=0x54;    //Set clock source, asynchronous, prescaler
     
     
 } /* end UserAppInitialize() */
@@ -128,7 +128,7 @@ void UserAppRun(void)
             su8Shift = 0; //change direction to left
         }
     }
-    su16Counter++;
+    su16Counter++;      //Increase Counter
 } /* end UserAppRun */
 
 
