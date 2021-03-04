@@ -31,18 +31,18 @@
 [v _ClockSetup ClockSetup `(v  1 e 1 0 ]
 "89
 [v _GpioSetup GpioSetup `(v  1 e 1 0 ]
-"113
+"112
 [v _SysTickSetup SysTickSetup `(v  1 e 1 0 ]
-"135
+"134
 [v _SystemSleep SystemSleep `(v  1 e 1 0 ]
-"142
-[v _TimeXus TimeXus `(v  1 e 1 0 ]
 "35 C:\GithubEncm369\2021_Encm369\main.c
 [v _main main `(v  1 e 1 0 ]
 "75 C:\GithubEncm369\2021_Encm369\user_app.c
 [v _UserAppInitialize UserAppInitialize `(v  1 e 1 0 ]
-"97
+"96
 [v _UserAppRun UserAppRun `(v  1 e 1 0 ]
+"119
+[v _TimeXus TimeXus `(v  1 e 1 0 ]
 "22235 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
 [v _TMR0L TMR0L `VEuc  1 e 1 @792 ]
 "22373
@@ -53,16 +53,14 @@
 [v _T0CON1 T0CON1 `VEuc  1 e 1 @795 ]
 "37918
 [v _ANSELA ANSELA `VEuc  1 e 1 @1024 ]
-"38414
-[v _ANSELB ANSELB `VEuc  1 e 1 @1032 ]
 "44870
 [v _PIR3 PIR3 `VEuc  1 e 1 @1201 ]
 "45585
 [v _LATA LATA `VEuc  1 e 1 @1214 ]
 "45840
 [v _TRISA TRISA `VEuc  1 e 1 @1222 ]
-"45902
-[v _TRISB TRISB `VEuc  1 e 1 @1223 ]
+"46095
+[v _PORTA PORTA `VEuc  1 e 1 @1230 ]
 "14 C:\GithubEncm369\2021_Encm369\main.c
 [v _G_u32SystemTime1ms G_u32SystemTime1ms `VEul  1 e 4 0 ]
 "15
@@ -76,49 +74,50 @@
 {
 "71
 } 0
-"97 C:\GithubEncm369\2021_Encm369\user_app.c
+"96 C:\GithubEncm369\2021_Encm369\user_app.c
 [v _UserAppRun UserAppRun `(v  1 e 1 0 ]
 {
-"101
-[v UserAppRun@u8Value u8Value `uc  1 a 1 0 ]
-"99
-[v UserAppRun@su16Counter su16Counter `us  1 s 2 su16Counter ]
 "100
-[v UserAppRun@su8Shift su8Shift `uc  1 s 1 su8Shift ]
-"132
+[v UserAppRun@au8Pattern au8Pattern `[8]uc  1 a 8 0 ]
+"98
+[v UserAppRun@u16Counter u16Counter `us  1 s 2 u16Counter ]
+"99
+[v UserAppRun@u8Index u8Index `uc  1 s 1 u8Index ]
+[v UserAppRun@F15924 F15924 `[8]uc  1 s 8 F15924 ]
+"116
 } 0
 "75
 [v _UserAppInitialize UserAppInitialize `(v  1 e 1 0 ]
 {
-"83
+"82
 } 0
-"142 C:\GithubEncm369\2021_Encm369\encm369_pic18.c
+"119
 [v _TimeXus TimeXus `(v  1 e 1 0 ]
 {
-"146
+"122
 [v TimeXus@u16TimerDifference u16TimerDifference `us  1 a 2 4 ]
-"149
+"125
 [v TimeXus@u8HighInput u8HighInput `uc  1 a 1 3 ]
-"148
+"124
 [v TimeXus@u8LowInput u8LowInput `uc  1 a 1 2 ]
-"142
-[v TimeXus@u16Microseconds u16Microseconds `us  1 p 2 0 ]
-"157
+"119
+[v TimeXus@u16Microseconds_ u16Microseconds_ `us  1 p 2 0 ]
+"133
 } 0
-"135
+"134 C:\GithubEncm369\2021_Encm369\encm369_pic18.c
 [v _SystemSleep SystemSleep `(v  1 e 1 0 ]
 {
-"138
+"137
 } 0
-"113
+"112
 [v _SysTickSetup SysTickSetup `(v  1 e 1 0 ]
 {
-"118
+"117
 } 0
 "89
 [v _GpioSetup GpioSetup `(v  1 e 1 0 ]
 {
-"98
+"97
 } 0
 "70
 [v _ClockSetup ClockSetup `(v  1 e 1 0 ]

@@ -27279,7 +27279,6 @@ void GpioSetup(void);
 
 void SysTickSetup(void);
 void SystemSleep(void);
-void TimeXus(u16 u16Microseconds);
 # 101 "./configuration.h" 2
 
 
@@ -27290,6 +27289,7 @@ void TimeXus(u16 u16Microseconds);
 # 27 "./user_app.h"
 void UserAppInitialize(void);
 void UserAppRun(void);
+void TimeXus(u16 u16Microseconds_);
 # 106 "./configuration.h" 2
 # 26 "user_app.c" 2
 
@@ -27310,47 +27310,48 @@ extern volatile u32 G_u32SystemFlags;
 # 75 "user_app.c"
 void UserAppInitialize(void)
 {
-    LATA=0x81;
-
+    LATA=0x80;
     T0CON0=0x90;
     T0CON1=0x54;
 
 
 }
-# 97 "user_app.c"
+# 96 "user_app.c"
 void UserAppRun(void)
 {
-    static u16 su16Counter = 0x0000;
-    static u8 su8Shift = 0x00;
-    u8 u8Value;
+    static u16 u16Counter = 0;
+    static u8 u8Index = 0;
+    u8 au8Pattern[8] = {0x20,0x10,0x08,0x04,0x02,0x01};
 
-    if(su16Counter == 0x01F4)
+    if (u16Counter>=500)
     {
-        su16Counter = 0x0000;
-        u8Value = LATA & 0x7F;
-
-        if(su8Shift == 0x00)
+        if (u8Index==6)
         {
-            u8Value = u8Value << 2 ;
+            u8Index=0;
         }
-
-        if(su8Shift == 0x01)
-        {
-            u8Value = u8Value >> 2;
-        }
-
-        LATA = u8Value | 0x80;
-
-
-        if(u8Value == 0x10)
-        {
-            su8Shift = 1;
-        }
-
-        if(u8Value == 0x01)
-        {
-            su8Shift = 0;
-        }
+        LATA= au8Pattern[u8Index];
+        u8Index= u8Index + 1;
+        u16Counter=0;
     }
-    su16Counter++;
+    else
+    {
+        u16Counter= u16Counter +1;
+    }
+}
+
+
+void TimeXus(u16 u16Microseconds_)
+{
+    T0CON0 = T0CON0 & 0x7F;
+    u16 u16TimerDifference = 0xFFFF - u16Microseconds_;
+
+    u8 u8LowInput = u16TimerDifference & 0xFF;
+    u8 u8HighInput = (u16TimerDifference >> 8) & 0xFF;
+    TMR0L = u8LowInput;
+    TMR0H = u8HighInput;
+
+    PIR3 = PIR3 & 0x7F;
+
+    T0CON0 = T0CON0 | 0x80;
+
 }

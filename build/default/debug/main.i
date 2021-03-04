@@ -27283,7 +27283,6 @@ void GpioSetup(void);
 
 void SysTickSetup(void);
 void SystemSleep(void);
-void TimeXus(u16 u16Microseconds);
 # 101 "./configuration.h" 2
 
 
@@ -27294,6 +27293,7 @@ void TimeXus(u16 u16Microseconds);
 # 27 "./user_app.h"
 void UserAppInitialize(void);
 void UserAppRun(void);
+void TimeXus(u16 u16Microseconds_);
 # 106 "./configuration.h" 2
 # 6 "main.c" 2
 
@@ -27334,10 +27334,13 @@ void main(void)
 
 
 
-                   ;
+    (LATA &= 0x7F);
     SystemSleep();
-    TimeXus(0x01F4);
-                  ;
+    TimeXus(1000);
+    while((PIR3 & 0x80) == 0x00)
+    {
+    }
+    (LATA |= 0x80);
 
   }
 

@@ -88,13 +88,12 @@ Promises:
 */
 void GpioSetup(void)
 {
-    LATA = 0x80; //Set data latch RA7 
+    LATA = 0x00; //Set data latch RA7 
     ANSELA = 0x00; //0 means digital function, 1 means analog function
     TRISA = 0x00; // input=1, output=0
+    PORTA=0x00;
     
-    TRISB = 0xFF;   
-    ANSELB = 0x00;  //set PORTB to digital
- 
+  
 } /* end GpioSetup() */
 
 
@@ -138,24 +137,6 @@ void SystemSleep(void)
 } /* end SystemSleep(void) */
 
 
-
-void TimeXus(u16 u16Microseconds)
-{
-    T0CON0 = T0CON0 & 0x7F;   //sets Timer0 enable tolow
-    
-    u16 u16TimerDifference = 0xFFFF - u16Microseconds;  //find remaining time before overflow
-    
-    u8 u8LowInput = u16TimerDifference & 0xFF;   //bitmask 8 LSBs
-    u8 u8HighInput = (u16TimerDifference >> 8) & 0xFF;  //bitmask 8 MSBs
-    TMR0L = u8LowInput;  //preload Timer0 8 LSBs
-    TMR0H = u8HighInput; //preload Timer0 8 MSBs
-    
-    PIR3 = PIR3 & 0x7F;  //sets TMR0IF to low
-    
-    T0CON0 = T0CON0 | 0x80;  //sets Timer0 enable to high
-    
-} 
-/* end TimeXus () */
 /*--------------------------------------------------------------------------------------------------------------------*/
 /*! @publicsection */                                                                                            
 /*--------------------------------------------------------------------------------------------------------------------*/

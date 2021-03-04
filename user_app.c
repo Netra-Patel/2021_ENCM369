@@ -74,8 +74,7 @@ Promises:
 */
 void UserAppInitialize(void)
 {
-    LATA=0x81;      //Initialize LEDs
-    
+    LATA=0x80;      //RA7 digital high
     T0CON0=0x90;    //Set enable, 16-bit, postscaler
     T0CON1=0x54;    //Set clock source, asynchronous, prescaler
     
@@ -96,43 +95,42 @@ Promises:
 */
 void UserAppRun(void)
 {
-    static u16 u16Counter = 0x0000;
-    static u8 u8Shift = 0x00;   //0 shifts left, 1 shifts right
-    u8 u8Value;
-
-    if(u16Counter == 0x01F4)   //if = 500 or 1ms total
-    {
-        u16Counter = 0x0000;  //reset counter
-        u8Value = LATA & 0x7F;  //bitmask LATA 
-        
-        if(u8Shift == 0x00) //if shifting left
+    static u16 u16Counter = 0;
+    static u8 u8Index = 0;
+    u8 au8Pattern[8] = {0x20,0x10,0x08,0x04,0x02,0x01};
+    
+    if (u16Counter>=500) 
+    {  
+        if (u8Index==6)   //end of the pattern array is reached
         {
-            u8Value = u8Value << 2 ; //shift 2 left
+            u8Index=0;   //re-start array pattern
         }
-        
-        if(u8Shift == 0x01) //if shifting right
-        {
-            u8Value = u8Value >> 2;  //shift 2 right
-        }
-        
-        LATA = u8Value | 0x80;  //give value back to LATA 
-  
-         
-        if(u8Value == 0x10) //reached far left point
-        {
-            u8Shift = 1; //change direction to right
-        }
-        
-        if(u8Value == 0x01) //reached far right point
-        {
-            u8Shift = 0; //change direction to left
-        }
+        LATA= au8Pattern[u8Index];   //LATA gets the different index values of the array
+        u8Index= u8Index + 1;        
+        u16Counter=0;
     }
-    u16Counter++;      //Increase Counter
+    else 
+    {
+        u16Counter= u16Counter +1;    //incrementing counter by 1
+    }  
 } /* end UserAppRun */
 
 
-
+void TimeXus(u16 u16Microseconds_)
+{
+    T0CON0 = T0CON0 & 0x7F;   //sets Timer0 enable tolow   
+    u16 u16TimerDifference = 0xFFFF - u16Microseconds_;  //find remaining time before overflow
+    
+    u8 u8LowInput = u16TimerDifference & 0xFF;   //bitmask 8 LSBs
+    u8 u8HighInput = (u16TimerDifference >> 8) & 0xFF;  //bitmask 8 MSBs
+    TMR0L = u8LowInput;  //preload Timer0 8 LSBs
+    TMR0H = u8HighInput; //preload Timer0 8 MSBs
+    
+    PIR3 = PIR3 & 0x7F;  //sets TMR0IF to low
+    
+    T0CON0 = T0CON0 | 0x80;  //sets Timer0 enable to high
+    
+} 
 /*------------------------------------------------------------------------------------------------------------------*/
 /*! @privatesection */                                                                                            
 /*--------------------------------------------------------------------------------------------------------------------*/

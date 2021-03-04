@@ -61,7 +61,7 @@ void main(void)
     HEARTBEAT_OFF();
     SystemSleep();
     TimeXus(1000);
-    while((PIR3 & 0x80) != 0x80)    //Loop to check the interupt bit is high
+    while((PIR3 & 0x80) == 0x00)    //Loop to check the interupt bit is high
     {
     }  
     HEARTBEAT_ON();
