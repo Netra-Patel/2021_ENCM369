@@ -96,21 +96,21 @@ Promises:
 */
 void UserAppRun(void)
 {
-    static u16 su16Counter = 0x0000;
-    static u8 su8Shift = 0x00;   //0 shifts left, 1 shifts right
+    static u16 u16Counter = 0x0000;
+    static u8 u8Shift = 0x00;   //0 shifts left, 1 shifts right
     u8 u8Value;
 
-    if(su16Counter == 0x01F4)   //if = 500 or 1ms total
+    if(u16Counter == 0x01F4)   //if = 500 or 1ms total
     {
-        su16Counter = 0x0000;  //reset counter
+        u16Counter = 0x0000;  //reset counter
         u8Value = LATA & 0x7F;  //bitmask LATA 
         
-        if(su8Shift == 0x00) //if shifting left
+        if(u8Shift == 0x00) //if shifting left
         {
             u8Value = u8Value << 2 ; //shift 2 left
         }
         
-        if(su8Shift == 0x01) //if shifting right
+        if(u8Shift == 0x01) //if shifting right
         {
             u8Value = u8Value >> 2;  //shift 2 right
         }
@@ -120,15 +120,15 @@ void UserAppRun(void)
          
         if(u8Value == 0x10) //reached far left point
         {
-            su8Shift = 1; //change direction to right
+            u8Shift = 1; //change direction to right
         }
         
         if(u8Value == 0x01) //reached far right point
         {
-            su8Shift = 0; //change direction to left
+            u8Shift = 0; //change direction to left
         }
     }
-    su16Counter++;      //Increase Counter
+    u16Counter++;      //Increase Counter
 } /* end UserAppRun */
 
 
