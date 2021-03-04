@@ -101,17 +101,17 @@ void UserAppRun(void)
     
     if (u16Counter>=500) 
     {  
-        if (u8Index==6)   //end of the pattern array is reached
+        if (u8Index==6)   //Pattern array has reached end
         {
-            u8Index=0;   //re-start array pattern
+            u8Index=0;   //re-start pattern
         }
-        LATA= au8Pattern[u8Index];   //LATA gets the different index values of the array
-        u8Index= u8Index + 1;        
-        u16Counter=0;
+        LATA= au8Pattern[u8Index];   //LATA gets different index values of the array/pattern
+        u8Index= u8Index + 1;        //Update Index
+        u16Counter=0;               // Set counter to 0
     }
     else 
     {
-        u16Counter= u16Counter +1;    //incrementing counter by 1
+        u16Counter= u16Counter +1;    //increment counter 
     }  
 } /* end UserAppRun */
 
