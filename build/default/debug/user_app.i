@@ -27320,17 +27320,17 @@ void UserAppInitialize(void)
 void UserAppRun(void)
 {
     static u16 u16Counter = 0;
-    static u8 u8Index = 6;
+    static u8 u8Index = 0;
     u8 au8Pattern[8] = {0x20,0x10,0x08,0x04,0x02,0x01};
 
     if (u16Counter>=500)
     {
-        if (u8Index==0)
+        if (u8Index==6)
         {
-            u8Index=6;
+            u8Index=0;
         }
         LATA= au8Pattern[u8Index];
-        u8Index= u8Index - 1;
+        u8Index= u8Index + 1;
         u16Counter=0;
     }
     else
