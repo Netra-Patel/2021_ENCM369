@@ -101,8 +101,7 @@ void GpioSetup(void)
   */
   DAC1CON = 0xA0;
   DAC1DATL=0x80; // 2.2 V ish
-    
-  
+   
 } /* end GpioSetup() */
 
 

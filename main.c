@@ -60,14 +60,14 @@ void main(void)
     /* System sleep */
     HEARTBEAT_OFF();
     SystemSleep();
-    TimeXus(10);// got 1Khz use 10
+    TimeXus(10);// got 1Khz 
     while((PIR3 & 0x80) == 0x00)    //Loop to check the interupt bit is high
     {
     }  
     HEARTBEAT_ON();
 #endif
     
-     /* trying to run as fast as possible */
+    /* trying to run it fast */
 #if 0
        /* Set the timer and wait out the period */
        TimeXus(2);

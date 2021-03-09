@@ -115,37 +115,13 @@ Promises:
 */
 void UserAppRun(void)
 {
-    /*
-    if(DAC1DATL==0xFF)
-    {
-       DAC1DATL=0x01; 
-    }
-    else
-    {
-        DAC1DATL++;
-    }
-    */
-    /*
-    while(DAC1DATL < 0xFF)
-    {
-       DAC1DATL++;
-       TimeXus(4);
-    }
-    
-    while(DAC1DATL>0x00)
-    {
-        DAC1DATL--;
-        TimeXus(4);
-   
-    }
-     */
     DAC1DATL = UserApp_au8sinTable[u8Index += 4];
 } /* end UserAppRun */
 
 
 void TimeXus(u16 u16Microseconds_)
 {
-    T0CON0 = T0CON0 & 0x7F;   //sets Timer0 enable tolow   
+    T0CON0 = T0CON0 & 0x7F;   //sets Timer0 enable to low   
     u16 u16TimerDifference = 0xFFFF - u16Microseconds_;  //find remaining time before overflow
     
     u8 u8LowInput = u16TimerDifference & 0xFF;   //bitmask 8 LSBs
