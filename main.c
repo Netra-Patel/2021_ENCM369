@@ -56,16 +56,24 @@ void main(void)
     /* Applications */
     UserAppRun();
    
-     
+#if 1 
     /* System sleep */
     HEARTBEAT_OFF();
     SystemSleep();
-    TimeXus(1000);
+    TimeXus(10);// got 1Khz use 10
     while((PIR3 & 0x80) == 0x00)    //Loop to check the interupt bit is high
     {
     }  
     HEARTBEAT_ON();
+#endif
     
+     /* trying to run as fast as possible */
+#if 0
+       /* Set the timer and wait out the period */
+       TimeXus(2);
+       while( PIR3bits.TMR0IF == 0 );
+       DAC1DATL += 1;
+#endif
   } /* end while(1) main super loop */
   
 } /* end main() */

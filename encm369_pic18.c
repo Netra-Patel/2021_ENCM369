@@ -88,10 +88,19 @@ Promises:
 */
 void GpioSetup(void)
 {
-    LATA = 0x00; //Set data latch RA7 
-    ANSELA = 0x00; 
-    TRISA = 0x00; 
-    PORTA=0x00;
+  ANSELA = 0x00;    // Enable digital drivers
+  TRISA = 0x00;     // Set RA as outputs
+  
+  /* Configure DAC1 
+   [7] = 1 (enable)
+   [6] = 0 (unused)
+   [5:4] = 10 (enable RA2 output only)
+   [3:2] = 00 (use Vdd for ref+)
+   [1] = 0 (unused)
+   [0] = 0 (Vss for ref-)
+  */
+  DAC1CON = 0xA0;
+  DAC1DATL=0x80; // 2.2 V ish
     
   
 } /* end GpioSetup() */

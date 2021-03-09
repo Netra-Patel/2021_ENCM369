@@ -31,19 +31,23 @@
 [v _ClockSetup ClockSetup `(v  1 e 1 0 ]
 "89
 [v _GpioSetup GpioSetup `(v  1 e 1 0 ]
-"112
+"121
 [v _SysTickSetup SysTickSetup `(v  1 e 1 0 ]
-"134
+"143
 [v _SystemSleep SystemSleep `(v  1 e 1 0 ]
 "35 C:\GithubEncm369\2021_Encm369\main.c
 [v _main main `(v  1 e 1 0 ]
-"75 C:\GithubEncm369\2021_Encm369\user_app.c
+"95 C:\GithubEncm369\2021_Encm369\user_app.c
 [v _UserAppInitialize UserAppInitialize `(v  1 e 1 0 ]
-"96
+"116
 [v _UserAppRun UserAppRun `(v  1 e 1 0 ]
-"119
+"146
 [v _TimeXus TimeXus `(v  1 e 1 0 ]
-"22235 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
+"3158 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
+[v _DAC1DATL DAC1DATL `VEuc  1 e 1 @125 ]
+"3236
+[v _DAC1CON DAC1CON `VEuc  1 e 1 @127 ]
+"22235
 [v _TMR0L TMR0L `VEuc  1 e 1 @792 ]
 "22373
 [v _TMR0H TMR0H `VEuc  1 e 1 @793 ]
@@ -59,8 +63,6 @@
 [v _LATA LATA `VEuc  1 e 1 @1214 ]
 "45840
 [v _TRISA TRISA `VEuc  1 e 1 @1222 ]
-"46095
-[v _PORTA PORTA `VEuc  1 e 1 @1230 ]
 "14 C:\GithubEncm369\2021_Encm369\main.c
 [v _G_u32SystemTime1ms G_u32SystemTime1ms `VEul  1 e 4 0 ]
 "15
@@ -69,55 +71,52 @@
 [v _G_u32SystemFlags G_u32SystemFlags `VEul  1 e 4 0 ]
 "33 C:\GithubEncm369\2021_Encm369\user_app.c
 [v _G_u8UserAppFlags G_u8UserAppFlags `VEuc  1 e 1 0 ]
+"60
+[v _u8Index u8Index `uc  1 s 1 u8Index ]
+"61
+[v _UserApp_au8sinTable UserApp_au8sinTable `[256]uc  1 s 256 UserApp_au8sinTable ]
 "35 C:\GithubEncm369\2021_Encm369\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"71
+"79
 } 0
-"96 C:\GithubEncm369\2021_Encm369\user_app.c
+"116 C:\GithubEncm369\2021_Encm369\user_app.c
 [v _UserAppRun UserAppRun `(v  1 e 1 0 ]
 {
-"100
-[v UserAppRun@au8Pattern au8Pattern `[8]uc  1 a 8 0 ]
-"98
-[v UserAppRun@u16Counter u16Counter `us  1 s 2 u16Counter ]
-"99
-[v UserAppRun@u8Index u8Index `uc  1 s 1 u8Index ]
-[v UserAppRun@F15924 F15924 `[8]uc  1 s 8 F15924 ]
-"116
+"143
 } 0
-"75
+"95
 [v _UserAppInitialize UserAppInitialize `(v  1 e 1 0 ]
 {
-"82
+"102
 } 0
-"119
+"146
 [v _TimeXus TimeXus `(v  1 e 1 0 ]
 {
-"122
+"149
 [v TimeXus@u16TimerDifference u16TimerDifference `us  1 a 2 4 ]
-"125
+"152
 [v TimeXus@u8HighInput u8HighInput `uc  1 a 1 3 ]
-"124
+"151
 [v TimeXus@u8LowInput u8LowInput `uc  1 a 1 2 ]
-"119
+"146
 [v TimeXus@u16Microseconds_ u16Microseconds_ `us  1 p 2 0 ]
-"133
+"160
 } 0
-"134 C:\GithubEncm369\2021_Encm369\encm369_pic18.c
+"143 C:\GithubEncm369\2021_Encm369\encm369_pic18.c
 [v _SystemSleep SystemSleep `(v  1 e 1 0 ]
 {
-"137
+"146
 } 0
-"112
+"121
 [v _SysTickSetup SysTickSetup `(v  1 e 1 0 ]
 {
-"117
+"126
 } 0
 "89
 [v _GpioSetup GpioSetup `(v  1 e 1 0 ]
 {
-"97
+"106
 } 0
 "70
 [v _ClockSetup ClockSetup `(v  1 e 1 0 ]

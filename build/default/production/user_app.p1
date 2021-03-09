@@ -8,6 +8,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "22725
 [; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 22725: extern volatile unsigned char T0CON1 __attribute__((address(0x31B)));
 [v _T0CON1 `Vuc ~T0 @X0 0 e@795 ]
+"3158
+[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 3158: extern volatile unsigned char DAC1DATL __attribute__((address(0x07D)));
+[v _DAC1DATL `Vuc ~T0 @X0 0 e@125 ]
 "22235
 [; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 22235: extern volatile unsigned char TMR0L __attribute__((address(0x318)));
 [v _TMR0L `Vuc ~T0 @X0 0 e@792 ]
@@ -2571,122 +2574,76 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _UserAppRun ]
 [f ]
 "98
-[; ;user_app.c: 98:     static u16 u16Counter = 0;
-[v F15922 `us ~T0 @X0 1 s u16Counter ]
-[i F15922
--> -> 0 `i `us
-]
+[; ;user_app.c: 98:     if(DAC1DATL==0xFF)
+[e $ ! == -> _DAC1DATL `i -> 255 `i 2274  ]
 "99
-[; ;user_app.c: 99:     static u8 u8Index = 0;
-[v F15923 `uc ~T0 @X0 1 s u8Index ]
-[i F15923
--> -> 0 `i `uc
-]
-[v F15924 `uc ~T0 @X0 -> 8 `i s ]
-[i F15924
-:U ..
+[; ;user_app.c: 99:     {
+{
 "100
-[; ;user_app.c: 100:     u8 au8Pattern[8] = {0x20,0x10,0x08,0x04,0x02,0x01};
--> -> 32 `i `uc
--> -> 16 `i `uc
--> -> 8 `i `uc
--> -> 4 `i `uc
--> -> 2 `i `uc
--> -> 1 `i `uc
-..
-]
-[v _au8Pattern `uc ~T0 @X0 -> 8 `i a ]
-[e = _au8Pattern F15924 ]
-"102
-[; ;user_app.c: 102:     if (u16Counter>=500)
-[e $ ! >= -> F15922 `ui -> -> 500 `i `ui 2274  ]
+[; ;user_app.c: 100:        DAC1DATL=0x01;
+[e = _DAC1DATL -> -> 1 `i `uc ]
+"101
+[; ;user_app.c: 101:     }
+}
+[e $U 2275  ]
 "103
-[; ;user_app.c: 103:     {
-{
+[; ;user_app.c: 103:     else
+[e :U 2274 ]
 "104
-[; ;user_app.c: 104:         if (u8Index==6)
-[e $ ! == -> F15923 `i -> 6 `i 2275  ]
-"105
-[; ;user_app.c: 105:         {
+[; ;user_app.c: 104:     {
 {
+"105
+[; ;user_app.c: 105:         DAC1DATL++;
+[e ++ _DAC1DATL -> -> 1 `i `Vuc ]
 "106
-[; ;user_app.c: 106:             u8Index=0;
-[e = F15923 -> -> 0 `i `uc ]
-"107
-[; ;user_app.c: 107:         }
+[; ;user_app.c: 106:     }
 }
 [e :U 2275 ]
 "108
-[; ;user_app.c: 108:         LATA= au8Pattern[u8Index];
-[e = _LATA *U + &U _au8Pattern * -> F15923 `ux -> -> # *U &U _au8Pattern `ui `ux ]
-"109
-[; ;user_app.c: 109:         u8Index= u8Index + 1;
-[e = F15923 -> + -> F15923 `i -> 1 `i `uc ]
-"110
-[; ;user_app.c: 110:         u16Counter=0;
-[e = F15922 -> -> 0 `i `us ]
-"111
-[; ;user_app.c: 111:     }
-}
-[e $U 2276  ]
-"112
-[; ;user_app.c: 112:     else
-[e :U 2274 ]
-"113
-[; ;user_app.c: 113:     {
-{
-"114
-[; ;user_app.c: 114:         u16Counter= u16Counter +1;
-[e = F15922 -> + -> F15922 `ui -> -> 1 `i `ui `us ]
-"115
-[; ;user_app.c: 115:     }
-}
-[e :U 2276 ]
-"116
-[; ;user_app.c: 116: }
+[; ;user_app.c: 108: }
 [e :UE 2273 ]
 }
-"119
-[; ;user_app.c: 119: void TimeXus(u16 u16Microseconds_)
+"111
+[; ;user_app.c: 111: void TimeXus(u16 u16Microseconds_)
 [v _TimeXus `(v ~T0 @X0 1 ef1`us ]
-"120
-[; ;user_app.c: 120: {
+"112
+[; ;user_app.c: 112: {
 {
 [e :U _TimeXus ]
-"119
-[; ;user_app.c: 119: void TimeXus(u16 u16Microseconds_)
+"111
+[; ;user_app.c: 111: void TimeXus(u16 u16Microseconds_)
 [v _u16Microseconds_ `us ~T0 @X0 1 r1 ]
-"120
-[; ;user_app.c: 120: {
+"112
+[; ;user_app.c: 112: {
 [f ]
-"121
-[; ;user_app.c: 121:     T0CON0 = T0CON0 & 0x7F;
+"113
+[; ;user_app.c: 113:     T0CON0 = T0CON0 & 0x7F;
 [e = _T0CON0 -> & -> _T0CON0 `i -> 127 `i `uc ]
-"122
-[; ;user_app.c: 122:     u16 u16TimerDifference = 0xFFFF - u16Microseconds_;
+"114
+[; ;user_app.c: 114:     u16 u16TimerDifference = 0xFFFF - u16Microseconds_;
 [v _u16TimerDifference `us ~T0 @X0 1 a ]
 [e = _u16TimerDifference -> - -> 65535 `ui -> _u16Microseconds_ `ui `us ]
-"124
-[; ;user_app.c: 124:     u8 u8LowInput = u16TimerDifference & 0xFF;
+"116
+[; ;user_app.c: 116:     u8 u8LowInput = u16TimerDifference & 0xFF;
 [v _u8LowInput `uc ~T0 @X0 1 a ]
 [e = _u8LowInput -> & -> _u16TimerDifference `ui -> -> 255 `i `ui `uc ]
-"125
-[; ;user_app.c: 125:     u8 u8HighInput = (u16TimerDifference >> 8) & 0xFF;
+"117
+[; ;user_app.c: 117:     u8 u8HighInput = (u16TimerDifference >> 8) & 0xFF;
 [v _u8HighInput `uc ~T0 @X0 1 a ]
 [e = _u8HighInput -> & >> -> _u16TimerDifference `ui -> 8 `i -> -> 255 `i `ui `uc ]
-"126
-[; ;user_app.c: 126:     TMR0L = u8LowInput;
+"118
+[; ;user_app.c: 118:     TMR0L = u8LowInput;
 [e = _TMR0L _u8LowInput ]
-"127
-[; ;user_app.c: 127:     TMR0H = u8HighInput;
+"119
+[; ;user_app.c: 119:     TMR0H = u8HighInput;
 [e = _TMR0H _u8HighInput ]
-"129
-[; ;user_app.c: 129:     PIR3 = PIR3 & 0x7F;
+"121
+[; ;user_app.c: 121:     PIR3 = PIR3 & 0x7F;
 [e = _PIR3 -> & -> _PIR3 `i -> 127 `i `uc ]
-"131
-[; ;user_app.c: 131:     T0CON0 = T0CON0 | 0x80;
+"123
+[; ;user_app.c: 123:     T0CON0 = T0CON0 | 0x80;
 [e = _T0CON0 -> | -> _T0CON0 `i -> 128 `i `uc ]
-"133
-[; ;user_app.c: 133: }
-[e :UE 2277 ]
+"125
+[; ;user_app.c: 125: }
+[e :UE 2276 ]
 }

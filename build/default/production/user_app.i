@@ -27319,24 +27319,16 @@ void UserAppInitialize(void)
 # 96 "user_app.c"
 void UserAppRun(void)
 {
-    static u16 u16Counter = 0;
-    static u8 u8Index = 0;
-    u8 au8Pattern[8] = {0x20,0x10,0x08,0x04,0x02,0x01};
-
-    if (u16Counter>=500)
+    if(DAC1DATL==0xFF)
     {
-        if (u8Index==6)
-        {
-            u8Index=0;
-        }
-        LATA= au8Pattern[u8Index];
-        u8Index= u8Index + 1;
-        u16Counter=0;
+       DAC1DATL=0x01;
     }
+
     else
     {
-        u16Counter= u16Counter +1;
+        DAC1DATL++;
     }
+
 }
 
 
