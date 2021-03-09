@@ -3,24 +3,22 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>PIC_Activity_5</name>
-            <creation-uuid>d188c19d-c78b-4f5a-885e-a7bd31d4ff9d</creation-uuid>
+            <name>PIC_Actvity_6</name>
+            <creation-uuid>13a9c181-74ac-454a-b9c9-30795fd5b1bd</creation-uuid>
             <make-project-type>0</make-project-type>
-            <c-extensions>c</c-extensions>
+            <c-extensions/>
             <cpp-extensions/>
-            <header-extensions>h</header-extensions>
+            <header-extensions/>
             <asminc-extensions/>
-            <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>
-            <sourceRootList>
-                <sourceRootElem>.</sourceRootElem>
-            </sourceRootList>
+            <sourceRootList/>
             <confList>
                 <confElem>
                     <name>default</name>
                     <type>2</type>
                 </confElem>
             </confList>
+            <sourceEncoding>ISO-8859-1</sourceEncoding>
             <formatting>
                 <project-formatting-style>false</project-formatting-style>
             </formatting>
