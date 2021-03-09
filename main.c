@@ -61,7 +61,7 @@ void main(void)
     HEARTBEAT_OFF();
     SystemSleep();
     TimeXus(10);// got 1Khz 
-    while((PIR3 & 0x80) == 0x00)    //Loop to check the interupt bit is high
+    while((PIR3 & 0x80) == 0x00)   //Loop to check the interupt bit is high
     {
     }  
     HEARTBEAT_ON();
@@ -72,7 +72,7 @@ void main(void)
        /* Set the timer and wait out the period */
        TimeXus(2);
        while( PIR3bits.TMR0IF == 0 );
-       DAC1DATL += 1;
+       DAC1DATL += 4;
 #endif
   } /* end while(1) main super loop */
   
