@@ -2886,151 +2886,154 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 124 `i `uc
 ..
 ]
-"94
-[; ;user_app.c: 94: void TimeXus(u16 u16TimeXus_)
+"93
+[; ;user_app.c: 93: void TimeXus(u16 u16TimeXus_)
 [v _TimeXus `(v ~T0 @X0 1 ef1`us ]
-"95
-[; ;user_app.c: 95: {
+"94
+[; ;user_app.c: 94: {
 {
 [e :U _TimeXus ]
-"94
-[; ;user_app.c: 94: void TimeXus(u16 u16TimeXus_)
+"93
+[; ;user_app.c: 93: void TimeXus(u16 u16TimeXus_)
 [v _u16TimeXus_ `us ~T0 @X0 1 r1 ]
-"95
-[; ;user_app.c: 95: {
+"94
+[; ;user_app.c: 94: {
 [f ]
-"96
-[; ;user_app.c: 96:   u16 u16Temp = 65535;
+"95
+[; ;user_app.c: 95:   u16 u16Temp = 65535;
 [v _u16Temp `us ~T0 @X0 1 a ]
 [e = _u16Temp -> -> 65535 `l `us ]
-"108
-[; ;user_app.c: 108:   T0CON0bits.EN = 0;
+"107
+[; ;user_app.c: 107:   T0CON0bits.EN = 0;
 [e = . . _T0CON0bits 0 4 -> -> 0 `i `uc ]
-"111
-[; ;user_app.c: 111:   u16Temp -= u16TimeXus_;
+"110
+[; ;user_app.c: 110:   u16Temp -= u16TimeXus_;
 [e =- _u16Temp -> _u16TimeXus_ `us ]
-"112
-[; ;user_app.c: 112:   TMR0H = (u8)( (u16Temp >> 8) & 0x00FF);
+"111
+[; ;user_app.c: 111:   TMR0H = (u8)( (u16Temp >> 8) & 0x00FF);
 [e = _TMR0H -> & >> -> _u16Temp `ui -> 8 `i -> -> 255 `i `ui `uc ]
-"113
-[; ;user_app.c: 113:   TMR0L = (u8)( u16Temp & 0x00FF);
+"112
+[; ;user_app.c: 112:   TMR0L = (u8)( u16Temp & 0x00FF);
 [e = _TMR0L -> & -> _u16Temp `ui -> -> 255 `i `ui `uc ]
-"116
-[; ;user_app.c: 116:   PIR3bits.TMR0IF = 0;
+"115
+[; ;user_app.c: 115:   PIR3bits.TMR0IF = 0;
 [e = . . _PIR3bits 0 7 -> -> 0 `i `uc ]
-"117
-[; ;user_app.c: 117:   T0CON0bits.EN = 1;
+"116
+[; ;user_app.c: 116:   T0CON0bits.EN = 1;
 [e = . . _T0CON0bits 0 4 -> -> 1 `i `uc ]
-"119
-[; ;user_app.c: 119: }
+"118
+[; ;user_app.c: 118: }
 [e :UE 2272 ]
 }
-"147
-[; ;user_app.c: 147: void InterruptTimerXus(u16 u16TimeXus_, _Bool bContinuous_)
+"146
+[; ;user_app.c: 146: void InterruptTimerXus(u16 u16TimeXus_, _Bool bContinuous_)
 [v _InterruptTimerXus `(v ~T0 @X0 1 ef2`us`a ]
-"148
-[; ;user_app.c: 148: {
+"147
+[; ;user_app.c: 147: {
 {
 [e :U _InterruptTimerXus ]
-"147
-[; ;user_app.c: 147: void InterruptTimerXus(u16 u16TimeXus_, _Bool bContinuous_)
+"146
+[; ;user_app.c: 146: void InterruptTimerXus(u16 u16TimeXus_, _Bool bContinuous_)
 [v _u16TimeXus_ `us ~T0 @X0 1 r1 ]
 [v _bContinuous_ `a ~T0 @X0 1 r2 ]
-"148
-[; ;user_app.c: 148: {
+"147
+[; ;user_app.c: 147: {
 [f ]
-"149
-[; ;user_app.c: 149:   u16 u16Temp;
+"148
+[; ;user_app.c: 148:   u16 u16Temp;
 [v _u16Temp `us ~T0 @X0 1 a ]
-"152
-[; ;user_app.c: 152:   T1CONbits.ON = 0;
+"151
+[; ;user_app.c: 151:   T1CONbits.ON = 0;
 [e = . . _T1CONbits 0 0 -> -> 0 `i `uc ]
-"155
-[; ;user_app.c: 155:   if(u16TimeXus_ > 32767)
+"154
+[; ;user_app.c: 154:   if(u16TimeXus_ > 32767)
 [e $ ! > -> _u16TimeXus_ `ui -> -> 32767 `i `ui 2274  ]
-"156
-[; ;user_app.c: 156:   {
+"155
+[; ;user_app.c: 155:   {
 {
-"157
-[; ;user_app.c: 157:     u16TimeXus_ = 32767;
+"156
+[; ;user_app.c: 156:     u16TimeXus_ = 32767;
 [e = _u16TimeXus_ -> -> 32767 `i `us ]
-"158
-[; ;user_app.c: 158:   }
+"157
+[; ;user_app.c: 157:   }
 }
 [e :U 2274 ]
-"161
-[; ;user_app.c: 161:   u16Temp = u16TimeXus_ << 1;
+"160
+[; ;user_app.c: 160:   u16Temp = u16TimeXus_ << 1;
 [e = _u16Temp -> << -> _u16TimeXus_ `ui -> 1 `i `us ]
-"164
-[; ;user_app.c: 164:   u16Temp = 65535 - u16TimeXus_;
+"163
+[; ;user_app.c: 163:   u16Temp = 65535 - u16TimeXus_;
 [e = _u16Temp -> - -> 65535 `l -> _u16TimeXus_ `l `us ]
-"165
-[; ;user_app.c: 165:   G_u8UserAppTimePeriodHi = (u8)( (u16Temp >> 8) & 0x00FF);
+"164
+[; ;user_app.c: 164:   G_u8UserAppTimePeriodHi = (u8)( (u16Temp >> 8) & 0x00FF);
 [e = _G_u8UserAppTimePeriodHi -> & >> -> _u16Temp `ui -> 8 `i -> -> 255 `i `ui `uc ]
-"166
-[; ;user_app.c: 166:   G_u8UserAppTimePeriodLo = (u8)( u16Temp & 0x00FF);
+"165
+[; ;user_app.c: 165:   G_u8UserAppTimePeriodLo = (u8)( u16Temp & 0x00FF);
 [e = _G_u8UserAppTimePeriodLo -> & -> _u16Temp `ui -> -> 255 `i `ui `uc ]
-"167
-[; ;user_app.c: 167:   TMR1H = G_u8UserAppTimePeriodHi;
+"166
+[; ;user_app.c: 166:   TMR1H = G_u8UserAppTimePeriodHi;
 [e = _TMR1H _G_u8UserAppTimePeriodHi ]
-"168
-[; ;user_app.c: 168:   TMR1L = G_u8UserAppTimePeriodLo;
+"167
+[; ;user_app.c: 167:   TMR1L = G_u8UserAppTimePeriodLo;
 [e = _TMR1L _G_u8UserAppTimePeriodLo ]
-"171
-[; ;user_app.c: 171:   G_u8UserAppFlags &= ~(u8)0x01;
+"170
+[; ;user_app.c: 170:   G_u8UserAppFlags &= ~(u8)0x01;
 [e =& _G_u8UserAppFlags -> ~ -> -> -> 1 `i `uc `i `Vuc ]
-"172
-[; ;user_app.c: 172:   if(bContinuous_)
+"171
+[; ;user_app.c: 171:   if(bContinuous_)
 [e $ ! != -> _bContinuous_ `i -> 0 `i 2275  ]
-"173
-[; ;user_app.c: 173:   {
+"172
+[; ;user_app.c: 172:   {
 {
-"174
-[; ;user_app.c: 174:     G_u8UserAppFlags |= (u8)0x01;
+"173
+[; ;user_app.c: 173:     G_u8UserAppFlags |= (u8)0x01;
 [e =| _G_u8UserAppFlags -> -> -> 1 `i `uc `Vuc ]
-"175
-[; ;user_app.c: 175:   }
+"174
+[; ;user_app.c: 174:   }
 }
 [e :U 2275 ]
-"178
-[; ;user_app.c: 178:   PIR3bits.TMR1IF = 0;
+"177
+[; ;user_app.c: 177:   PIR3bits.TMR1IF = 0;
 [e = . . _PIR3bits 0 4 -> -> 0 `i `uc ]
-"179
-[; ;user_app.c: 179:   PIE3bits.TMR1IE = 1;
+"178
+[; ;user_app.c: 178:   PIE3bits.TMR1IE = 1;
 [e = . . _PIE3bits 0 4 -> -> 1 `i `uc ]
-"180
-[; ;user_app.c: 180:   T1CONbits.ON = 1;
+"179
+[; ;user_app.c: 179:   T1CONbits.ON = 1;
 [e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
-"182
-[; ;user_app.c: 182: }
+"181
+[; ;user_app.c: 181: }
 [e :UE 2273 ]
 }
-"204
-[; ;user_app.c: 204: void UserAppInitialize(void)
+"203
+[; ;user_app.c: 203: void UserAppInitialize(void)
 [v _UserAppInitialize `(v ~T0 @X0 1 ef ]
-"205
-[; ;user_app.c: 205: {
+"204
+[; ;user_app.c: 204: {
 {
 [e :U _UserAppInitialize ]
 [f ]
-"207
-[; ;user_app.c: 207:     LATA &= 0xC0;
+"206
+[; ;user_app.c: 206:     LATA &= 0xC0;
 [e =& _LATA -> -> 192 `i `Vuc ]
-"211
-[; ;user_app.c: 211:     T0CON0 = 0x90;
+"210
+[; ;user_app.c: 210:     T0CON0 = 0x90;
 [e = _T0CON0 -> -> 144 `i `uc ]
-"212
-[; ;user_app.c: 212:     T0CON1 = 0x54;
+"211
+[; ;user_app.c: 211:     T0CON1 = 0x54;
 [e = _T0CON1 -> -> 84 `i `uc ]
-"216
-[; ;user_app.c: 216:     T1GCON = 0x00;
+"215
+[; ;user_app.c: 215:     T1GCON = 0x00;
 [e = _T1GCON -> -> 0 `i `uc ]
-"217
-[; ;user_app.c: 217:     T1CLK = 0x01;
+"216
+[; ;user_app.c: 216:     T1CLK = 0x01;
 [e = _T1CLK -> -> 1 `i `uc ]
-"218
-[; ;user_app.c: 218:     T1CON = 0x31;
+"217
+[; ;user_app.c: 217:     T1CON = 0x31;
 [e = _T1CON -> -> 49 `i `uc ]
+"220
+[; ;user_app.c: 220:     InterruptTimerXus(16,1);
+[e ( _InterruptTimerXus (2 , -> -> 16 `i `us -> -> 1 `i `a ]
 "223
 [; ;user_app.c: 223: }
 [e :UE 2276 ]
@@ -3043,7 +3046,128 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _UserAppRun ]
 [f ]
+[v F15933 `us ~T0 @X0 -> 28 `i s ]
+[i F15933
+:U ..
+"240
+[; ;user_app.c: 240:     u16 u16Notes[] = {(u16)(u16)60, (u16)(u16)0, (u16)(u16)60, (u16)(u16)0, (u16)(u16)40, (u16)(u16)0, (u16)(u16)40, (u16)(u16)0,(u16)(u16)36, (u16)(u16)0, (u16)(u16)36, (u16)(u16)0, (u16)(u16)40, (u16)(u16)0, (u16)(u16)45, (u16)(u16)0, (u16)(u16)45, (u16)(u16)0, (u16)(u16)47, (u16)(u16)0, (u16)(u16)47, (u16)(u16)0, (u16)(u16)53, (u16)(u16)0, (u16)(u16)53, (u16)(u16)0, (u16)(u16)60, (u16)(u16)0};
+-> -> 60 `i `us
+-> -> 0 `i `us
+-> -> 60 `i `us
+-> -> 0 `i `us
+-> -> 40 `i `us
+-> -> 0 `i `us
+-> -> 40 `i `us
+-> -> 0 `i `us
+-> -> 36 `i `us
+-> -> 0 `i `us
+-> -> 36 `i `us
+-> -> 0 `i `us
+-> -> 40 `i `us
+-> -> 0 `i `us
+-> -> 45 `i `us
+-> -> 0 `i `us
+-> -> 45 `i `us
+-> -> 0 `i `us
+-> -> 47 `i `us
+-> -> 0 `i `us
+-> -> 47 `i `us
+-> -> 0 `i `us
+-> -> 53 `i `us
+-> -> 0 `i `us
+-> -> 53 `i `us
+-> -> 0 `i `us
+-> -> 60 `i `us
+-> -> 0 `i `us
+..
+]
+[v _u16Notes `us ~T0 @X0 -> 28 `i a ]
+[e = _u16Notes F15933 ]
+[v F15935 `us ~T0 @X0 -> 28 `i s ]
+[i F15935
+:U ..
 "242
-[; ;user_app.c: 242: }
+[; ;user_app.c: 242: u16 u16Break[] = {(u16)((u16)2048 / 4), (u16)50, (u16)((u16)2048 / 4), (u16)50, (u16)((u16)2048 / 4), (u16)50, (u16)((u16)2048 / 4), (u16)50,(u16)((u16)2048 / 4), (u16)50, (u16)((u16)2048 / 4), (u16)50, (u16)((u16)2048 / 2), (u16)50,(u16)((u16)2048 / 4), (u16)50, (u16)((u16)2048 / 4), (u16)50, (u16)((u16)2048 / 4), (u16)50, (u16)((u16)2048 / 4), (u16)50, (u16)((u16)2048 / 4), (u16)50, (u16)((u16)2048 / 4), (u16)50, (u16)((u16)2048 / 2), 2000};
+-> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
+-> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
+-> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
+-> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
+-> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
+-> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
+-> / -> -> -> 2048 `i `us `ui -> -> 2 `i `ui `us
+-> -> 50 `i `us
+-> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
+-> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
+-> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
+-> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
+-> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
+-> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
+-> / -> -> -> 2048 `i `us `ui -> -> 2 `i `ui `us
+-> -> 2000 `i `us
+..
+]
+[v _u16Break `us ~T0 @X0 -> 28 `i a ]
+[e = _u16Break F15935 ]
+"244
+[; ;user_app.c: 244:     static s8 s8Index = 0;
+[v F15937 `c ~T0 @X0 1 s s8Index ]
+[i F15937
+-> -> 0 `i `c
+]
+"245
+[; ;user_app.c: 245:     static u16 u16Counter = 0x0000;
+[v F15938 `us ~T0 @X0 1 s u16Counter ]
+[i F15938
+-> -> 0 `i `us
+]
+"247
+[; ;user_app.c: 247:     if (u16Counter == u16Break[s8Index])
+[e $ ! == -> F15938 `ui -> *U + &U _u16Break * -> -> F15937 `uc `ux -> -> # *U &U _u16Break `ui `ux `ui 2278  ]
+"248
+[; ;user_app.c: 248:     {
+{
+"249
+[; ;user_app.c: 249:         u16Counter = 0x0000;
+[e = F15938 -> -> 0 `i `us ]
+"251
+[; ;user_app.c: 251:         if (s8Index == 27)
+[e $ ! == -> F15937 `i -> 27 `i 2279  ]
+"252
+[; ;user_app.c: 252:         {
+{
+"253
+[; ;user_app.c: 253:             s8Index = -1;
+[e = F15937 -> -U -> 1 `i `c ]
+"254
+[; ;user_app.c: 254:         }
+}
+[e :U 2279 ]
+"256
+[; ;user_app.c: 256:         InterruptTimerXus(u16Notes[s8Index + 1],1);
+[e ( _InterruptTimerXus (2 , *U + &U _u16Notes * -> -> + -> F15937 `i -> 1 `i `ui `ux -> -> # *U &U _u16Notes `ui `ux -> -> 1 `i `a ]
+"258
+[; ;user_app.c: 258:         s8Index++;
+[e ++ F15937 -> -> 1 `i `c ]
+"259
+[; ;user_app.c: 259:     }
+}
+[e :U 2278 ]
+"260
+[; ;user_app.c: 260:     u16Counter++;
+[e ++ F15938 -> -> 1 `i `us ]
+"263
+[; ;user_app.c: 263: }
 [e :UE 2277 ]
 }

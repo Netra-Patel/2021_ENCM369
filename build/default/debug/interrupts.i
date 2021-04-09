@@ -1,4 +1,4 @@
-# 1 "user_app.c"
+# 1 "interrupts.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "user_app.c" 2
-# 26 "user_app.c"
+# 1 "interrupts.c" 2
+# 26 "interrupts.c"
 # 1 "./configuration.h" 1
 # 30 "./configuration.h"
 #pragma config FEXTOSC = OFF
@@ -27306,143 +27306,84 @@ void TimeXus(u16 u16TimeXus_);
 void UserAppInitialize(void);
 void UserAppRun(void);
 # 103 "./configuration.h" 2
-# 26 "user_app.c" 2
-
-
-
-
-
-
-
-volatile u8 G_u8UserAppFlags;
-volatile u8 G_u8UserAppTimePeriodHi;
-volatile u8 G_u8UserAppTimePeriodLo;
-
-u8 G_au8UserAppsinTable[] =
-{
-0x80,0x83,0x86,0x89,0x8c,0x8f,0x92,0x95,0x98,0x9b,0x9e,0xa2,0xa5,0xa7,0xaa,0xad,
-0xb0,0xb3,0xb6,0xb9,0xbc,0xbe,0xc1,0xc4,0xc6,0xc9,0xcb,0xce,0xd0,0xd3,0xd5,0xd7,
-0xda,0xdc,0xde,0xe0,0xe2,0xe4,0xe6,0xe8,0xea,0xeb,0xed,0xee,0xf0,0xf1,0xf3,0xf4,
-0xf5,0xf6,0xf8,0xf9,0xfa,0xfa,0xfb,0xfc,0xfd,0xfd,0xfe,0xfe,0xfe,0xff,0xff,0xff,
-0xff,0xff,0xff,0xff,0xfe,0xfe,0xfe,0xfd,0xfd,0xfc,0xfb,0xfa,0xfa,0xf9,0xf8,0xf6,
-0xf5,0xf4,0xf3,0xf1,0xf0,0xee,0xed,0xeb,0xea,0xe8,0xe6,0xe4,0xe2,0xe0,0xde,0xdc,
-0xda,0xd7,0xd5,0xd3,0xd0,0xce,0xcb,0xc9,0xc6,0xc4,0xc1,0xbe,0xbc,0xb9,0xb6,0xb3,
-0xb0,0xad,0xaa,0xa7,0xa5,0xa2,0x9e,0x9b,0x98,0x95,0x92,0x8f,0x8c,0x89,0x86,0x83,
-0x80,0x7c,0x79,0x76,0x73,0x70,0x6d,0x6a,0x67,0x64,0x61,0x5d,0x5a,0x58,0x55,0x52,
-0x4f,0x4c,0x49,0x46,0x43,0x41,0x3e,0x3b,0x39,0x36,0x34,0x31,0x2f,0x2c,0x2a,0x28,
-0x25,0x23,0x21,0x1f,0x1d,0x1b,0x19,0x17,0x15,0x14,0x12,0x11,0x0f,0x0e,0x0c,0x0b,
-0x0a,0x09,0x07,0x06,0x05,0x05,0x04,0x03,0x02,0x02,0x01,0x01,0x01,0x00,0x00,0x00,
-0x00,0x00,0x00,0x00,0x01,0x01,0x01,0x02,0x02,0x03,0x04,0x05,0x05,0x06,0x07,0x09,
-0x0a,0x0b,0x0c,0x0e,0x0f,0x11,0x12,0x14,0x15,0x17,0x19,0x1b,0x1d,0x1f,0x21,0x23,
-0x25,0x28,0x2a,0x2c,0x2f,0x31,0x34,0x36,0x39,0x3b,0x3e,0x41,0x43,0x46,0x49,0x4c,
-0x4f,0x52,0x55,0x58,0x5a,0x5d,0x61,0x64,0x67,0x6a,0x6d,0x70,0x73,0x76,0x79,0x7c
-};
-
-
-
+# 27 "interrupts.c" 2
+# 37 "interrupts.c"
 extern volatile u32 G_u32SystemTime1ms;
 extern volatile u32 G_u32SystemTime1s;
-extern volatile u32 G_u32SystemFlags;
-# 93 "user_app.c"
-void TimeXus(u16 u16TimeXus_)
+extern volatile u8 G_u8SystemFlags;
+
+extern volatile u8 G_u8UserAppFlags;
+extern volatile u8 G_u8UserAppTimePeriodHi;
+extern volatile u8 G_u8UserAppTimePeriodLo;
+
+extern u8 G_au8UserAppsinTable[];
+# 74 "interrupts.c"
+void InterruptSetup(void)
 {
-  u16 u16Temp = 65535;
-# 107 "user_app.c"
-  T0CON0bits.EN = 0;
+
+  INTCON0bits.IPEN = 1;
 
 
-  u16Temp -= u16TimeXus_;
-  TMR0H = (u8)( (u16Temp >> 8) & 0x00FF);
-  TMR0L = (u8)( u16Temp & 0x00FF);
-
-
-  PIR3bits.TMR0IF = 0;
-  T0CON0bits.EN = 1;
+  INTCON0bits.GIEH = 1;
+  INTCON0bits.GIEL = 1;
 
 }
-# 146 "user_app.c"
-void InterruptTimerXus(u16 u16TimeXus_, _Bool bContinuous_)
+
+
+void __attribute__((picinterrupt(("irq(0), high_priority")))) SW_ISR(void)
 {
-  u16 u16Temp;
+  PIR0bits.SWIF = 0;
+
+}
 
 
-  T1CONbits.ON = 0;
+void __attribute__((picinterrupt(("irq(default), low_priority")))) DEFAULT_ISR(void)
+{
 
 
-  if(u16TimeXus_ > 32767)
-  {
-    u16TimeXus_ = 32767;
-  }
 
 
-  u16Temp = u16TimeXus_ << 1;
+  static u32 u32UnhandledCounter = 0;
+
+  u32UnhandledCounter++;
 
 
-  u16Temp = 65535 - u16TimeXus_;
-  G_u8UserAppTimePeriodHi = (u8)( (u16Temp >> 8) & 0x00FF);
-  G_u8UserAppTimePeriodLo = (u8)( u16Temp & 0x00FF);
+
+
+}
+
+
+
+
+
+void __attribute__((picinterrupt(("irq(28), high_priority")))) TMR1_ISR(void)
+{
+  static u8 u8Index = 0;
+
+
   TMR1H = G_u8UserAppTimePeriodHi;
   TMR1L = G_u8UserAppTimePeriodLo;
+# 132 "interrupts.c"
+  PIR3bits.TMR1IF = 0;
 
 
-  G_u8UserAppFlags &= ~(u8)0x01;
-  if(bContinuous_)
+  if( !(G_u8UserAppFlags & (u8)0x01) )
   {
-    G_u8UserAppFlags |= (u8)0x01;
+    PIE3bits.TMR1IE = 0;
+    T1CONbits.ON = 0;
   }
 
-
-  PIR3bits.TMR1IF = 0;
-  PIE3bits.TMR1IE = 1;
-  T1CONbits.ON = 1;
-
 }
-# 203 "user_app.c"
-void UserAppInitialize(void)
+
+
+
+void __attribute__((picinterrupt(("irq(27), high_priority")))) TMR2_ISR(void)
 {
 
-    LATA &= 0xC0;
+  PIR3bits.TMR2IF = 0;
+  G_u8SystemFlags &= ~(u8)0x40;
 
 
-
-    T0CON0 = 0x90;
-    T0CON1 = 0x54;
-
-
-
-    T1GCON = 0x00;
-    T1CLK = 0x01;
-    T1CON = 0x31;
-
-
-    InterruptTimerXus(16,1);
-
-
-}
-# 238 "user_app.c"
-void UserAppRun(void)
-{
-    u16 u16Notes[] = {(u16)(u16)60, (u16)(u16)0, (u16)(u16)60, (u16)(u16)0, (u16)(u16)40, (u16)(u16)0, (u16)(u16)40, (u16)(u16)0,(u16)(u16)36, (u16)(u16)0, (u16)(u16)36, (u16)(u16)0, (u16)(u16)40, (u16)(u16)0, (u16)(u16)45, (u16)(u16)0, (u16)(u16)45, (u16)(u16)0, (u16)(u16)47, (u16)(u16)0, (u16)(u16)47, (u16)(u16)0, (u16)(u16)53, (u16)(u16)0, (u16)(u16)53, (u16)(u16)0, (u16)(u16)60, (u16)(u16)0};
-
-u16 u16Break[] = {(u16)((u16)2048 / 4), (u16)50, (u16)((u16)2048 / 4), (u16)50, (u16)((u16)2048 / 4), (u16)50, (u16)((u16)2048 / 4), (u16)50,(u16)((u16)2048 / 4), (u16)50, (u16)((u16)2048 / 4), (u16)50, (u16)((u16)2048 / 2), (u16)50,(u16)((u16)2048 / 4), (u16)50, (u16)((u16)2048 / 4), (u16)50, (u16)((u16)2048 / 4), (u16)50, (u16)((u16)2048 / 4), (u16)50, (u16)((u16)2048 / 4), (u16)50, (u16)((u16)2048 / 4), (u16)50, (u16)((u16)2048 / 2), 2000};
-
-    static s8 s8Index = 0;
-    static u16 u16Counter = 0x0000;
-
-    if (u16Counter == u16Break[s8Index])
-    {
-        u16Counter = 0x0000;
-
-        if (s8Index == 27)
-        {
-            s8Index = -1;
-        }
-
-        InterruptTimerXus(u16Notes[s8Index + 1],1);
-
-        s8Index++;
-    }
-    u16Counter++;
-
-
+  G_u32SystemTime1ms++;
+# 161 "interrupts.c"
 }

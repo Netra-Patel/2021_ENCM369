@@ -54,7 +54,6 @@ u8 G_au8UserAppsinTable[] =
 0x4f,0x52,0x55,0x58,0x5a,0x5d,0x61,0x64,0x67,0x6a,0x6d,0x70,0x73,0x76,0x79,0x7c   
 };
 
-
 /*--------------------------------------------------------------------------------------------------------------------*/
 /* Existing variables (defined in other files -- should all contain the "extern" keyword) */
 extern volatile u32 G_u32SystemTime1ms;                   /*!< @brief From main.c */
@@ -218,6 +217,7 @@ void UserAppInitialize(void)
     T1CON  = 0x31;  // b'00110001'
     
     // Test call to set frequency
+    InterruptTimerXus(16,true);
  
     
 } /* end UserAppInitialize() */
@@ -237,6 +237,27 @@ Promises:
 */
 void UserAppRun(void)
 {
+    u16 u16Notes[] = {C4, NN, C4, NN, G4, NN, G4, NN,A4, NN, A4, NN, G4, NN, F4, NN, F4, NN, E4, NN, E4, NN, D4, NN, D4, NN, C4, NN};
+
+u16 u16Break[] = {N4, RT, N4, RT, N4, RT, N4, RT,N4, RT, N4, RT, N2, RT,N4, RT, N4, RT, N4, RT, N4, RT, N4, RT, N4, RT, N2, 2000};
+
+    static s8 s8Index = 0;     //runs through note array
+    static u16 u16Counter = 0x0000;  //Counts
+
+    if (u16Counter == u16Break[s8Index])  //after wait
+    {
+        u16Counter = 0x0000;  //reset counter
+        
+        if (s8Index == 27)  //if index end of array
+        {
+            s8Index = -1;   
+        }
+        
+        InterruptTimerXus(u16Notes[s8Index + 1],1); //next frequency
+        
+        s8Index++;  //next note
+    }
+    u16Counter++;
 
   
 } /* end UserAppRun() */

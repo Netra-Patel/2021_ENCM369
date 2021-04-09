@@ -27340,14 +27340,15 @@ u8 G_au8UserAppsinTable[] =
 
 
 
+
 extern volatile u32 G_u32SystemTime1ms;
 extern volatile u32 G_u32SystemTime1s;
 extern volatile u32 G_u32SystemFlags;
-# 93 "user_app.c"
+# 94 "user_app.c"
 void TimeXus(u16 u16TimeXus_)
 {
   u16 u16Temp = 65535;
-# 107 "user_app.c"
+# 108 "user_app.c"
   T0CON0bits.EN = 0;
 
 
@@ -27360,7 +27361,7 @@ void TimeXus(u16 u16TimeXus_)
   T0CON0bits.EN = 1;
 
 }
-# 146 "user_app.c"
+# 147 "user_app.c"
 void InterruptTimerXus(u16 u16TimeXus_, _Bool bContinuous_)
 {
   u16 u16Temp;
@@ -27397,7 +27398,7 @@ void InterruptTimerXus(u16 u16TimeXus_, _Bool bContinuous_)
   T1CONbits.ON = 1;
 
 }
-# 203 "user_app.c"
+# 204 "user_app.c"
 void UserAppInitialize(void)
 {
 
@@ -27415,34 +27416,35 @@ void UserAppInitialize(void)
     T1CON = 0x31;
 
 
-    InterruptTimerXus(16,1);
+
 
 
 }
-# 238 "user_app.c"
+# 239 "user_app.c"
 void UserAppRun(void)
 {
-    u16 u16Notes[] = {(u16)(u16)60, (u16)(u16)0, (u16)(u16)60, (u16)(u16)0, (u16)(u16)40, (u16)(u16)0, (u16)(u16)40, (u16)(u16)0,(u16)(u16)36, (u16)(u16)0, (u16)(u16)36, (u16)(u16)0, (u16)(u16)40, (u16)(u16)0, (u16)(u16)45, (u16)(u16)0, (u16)(u16)45, (u16)(u16)0, (u16)(u16)47, (u16)(u16)0, (u16)(u16)47, (u16)(u16)0, (u16)(u16)53, (u16)(u16)0, (u16)(u16)53, (u16)(u16)0, (u16)(u16)60, (u16)(u16)0};
+static u16 u16Counter = 0;
+    static u16 u16Counter2 = 0;
+    static u16 u16Counter3 = 0;
+    u16 u16Notes[] = {(u16)(u16)60,0,(u16)(u16)60,0,(u16)(u16)40,0,(u16)(u16)40,0,(u16)(u16)36,0,(u16)(u16)45,0,(u16)(u16)36,0,(u16)(u16)40,0,(u16)(u16)45,0,(u16)(u16)45,0,(u16)(u16)47,0,(u16)(u16)47,0,(u16)(u16)53,0,(u16)(u16)53,0,(u16)(u16)60, 0};
+    u16 u16Breaks[] = {(u16)((u16)2048 / 4),(u16)50,(u16)((u16)2048 / 4),(u16)50,(u16)((u16)2048 / 4),(u16)50,(u16)((u16)2048 / 4),(u16)50,(u16)((u16)2048 / 4),(u16)50,(u16)((u16)2048 / 4),(u16)50,(u16)((u16)2048 / 4),(u16)50,(u16)((u16)2048 / 2),(u16)50,(u16)((u16)2048 / 4),(u16)50,(u16)((u16)2048 / 4),(u16)50,(u16)((u16)2048 / 4),(u16)50,(u16)((u16)2048 / 4),(u16)50,(u16)((u16)2048 / 4),(u16)50,(u16)((u16)2048 / 4),(u16)50,(u16)((u16)2048 / 2),(u16)50,(u16)((u16)2048)};
 
-u16 u16Break[] = {(u16)((u16)2048 / 4), (u16)50, (u16)((u16)2048 / 4), (u16)50, (u16)((u16)2048 / 4), (u16)50, (u16)((u16)2048 / 4), (u16)50,(u16)((u16)2048 / 4), (u16)50, (u16)((u16)2048 / 4), (u16)50, (u16)((u16)2048 / 2), (u16)50,(u16)((u16)2048 / 4), (u16)50, (u16)((u16)2048 / 4), (u16)50, (u16)((u16)2048 / 4), (u16)50, (u16)((u16)2048 / 4), (u16)50, (u16)((u16)2048 / 4), (u16)50, (u16)((u16)2048 / 4), (u16)50, (u16)((u16)2048 / 2), 2000};
-
-    static s8 s8Index = 0;
-    static u16 u16Counter = 0x0000;
-
-    if (u16Counter == u16Break[s8Index])
+    if(u16Counter3 < u16Breaks[u16Counter2])
     {
-        u16Counter = 0x0000;
-
-        if (s8Index == 27)
-        {
-            s8Index = -1;
-        }
-
-        InterruptTimerXus(u16Notes[s8Index + 1],1);
-
-        s8Index++;
+    InterruptTimerXus(u16Notes[u16Counter],1);
+    u16Counter3++;
     }
+    else
+    {
     u16Counter++;
+    u16Counter2++;
+    u16Counter3 = 0;
+    }
+    if(u16Counter >29 )
+    {
+        u16Counter = 0;
+        u16Counter2 = 0;
+    }
 
 
 }

@@ -1,107 +1,29 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"46370 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
-[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 46370:     struct {
-[s S2177 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S2177 . INT0EDG INT1EDG INT2EDG . IPEN GIEL GIE ]
-"46379
-[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 46379:     struct {
-[s S2178 :7 `uc 1 :1 `uc 1 ]
-[n S2178 . . GIEH ]
-"46369
-[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 46369: typedef union {
-[u S2176 `S2177 1 `S2178 1 ]
-[n S2176 . . . ]
-"46384
-[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 46384: extern volatile INTCON0bits_t INTCON0bits __attribute__((address(0x4D6)));
-[v _INTCON0bits `VS2176 ~T0 @X0 0 e@1238 ]
-[t ~ __interrupt . k ]
-[t T1 __interrupt irq ( 0 ) high_priority ]
-"44717
-[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 44717:     struct {
-[s S2119 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S2119 . SWIF HLVDIF OSFIF CSWIF . CLC1IF . IOCIF ]
-"44716
-[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 44716: typedef union {
-[u S2118 `S2119 1 ]
-[n S2118 . . ]
-"44728
-[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 44728: extern volatile PIR0bits_t PIR0bits __attribute__((address(0x4AE)));
-[v _PIR0bits `VS2118 ~T0 @X0 0 e@1198 ]
-[t T2 __interrupt irq ( default ) low_priority ]
-[t T3 __interrupt irq ( 28 ) high_priority ]
-"22937
-[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 22937: extern volatile unsigned char TMR1H __attribute__((address(0x31D)));
-[v _TMR1H `Vuc ~T0 @X0 0 e@797 ]
-"42 interrupts.c
-[; ;interrupts.c: 42: extern volatile u8 G_u8UserAppTimePeriodHi;
-[v _G_u8UserAppTimePeriodHi `Vuc ~T0 @X0 0 e ]
-"22867 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
-[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 22867: extern volatile unsigned char TMR1L __attribute__((address(0x31C)));
-[v _TMR1L `Vuc ~T0 @X0 0 e@796 ]
-"43 interrupts.c
-[; ;interrupts.c: 43: extern volatile u8 G_u8UserAppTimePeriodLo;
-[v _G_u8UserAppTimePeriodLo `Vuc ~T0 @X0 0 e ]
-"3158 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
-[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 3158: extern volatile unsigned char DAC1DATL __attribute__((address(0x07D)));
-[v _DAC1DATL `Vuc ~T0 @X0 0 e@125 ]
-"45 interrupts.c
-[; ;interrupts.c: 45: extern u8 G_au8UserAppsinTable[];
-[v _G_au8UserAppsinTable `uc ~T0 @X0 -> 0 `x e ]
-"44876 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
-[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 44876:     struct {
-[s S2125 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S2125 . SPI1RXIF SPI1TXIF SPI1IF TMR2IF TMR1IF TMR1GIF CCP1IF TMR0IF ]
-"44875
-[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 44875: typedef union {
-[u S2124 `S2125 1 ]
-[n S2124 . . ]
-"44887
-[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 44887: extern volatile PIR3bits_t PIR3bits __attribute__((address(0x4B1)));
-[v _PIR3bits `VS2124 ~T0 @X0 0 e@1201 ]
-"41 interrupts.c
-[; ;interrupts.c: 41: extern volatile u8 G_u8UserAppFlags;
-[v _G_u8UserAppFlags `Vuc ~T0 @X0 0 e ]
-"44002 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
-[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 44002:     struct {
-[s S2093 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S2093 . SPI1RXIE SPI1TXIE SPI1IE TMR2IE TMR1IE TMR1GIE CCP1IE TMR0IE ]
-"44001
-[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 44001: typedef union {
-[u S2092 `S2093 1 ]
-[n S2092 . . ]
-"44013
-[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 44013: extern volatile PIE3bits_t PIE3bits __attribute__((address(0x4A1)));
-[v _PIE3bits `VS2092 ~T0 @X0 0 e@1185 ]
-"23018
-[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 23018:     struct {
-[s S1114 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 ]
-[n S1114 . ON RD16 NOT_SYNC . CKPS ]
-"23025
-[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 23025:     struct {
-[s S1115 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1115 . TMR1ON T1RD16 NOT_T1SYNC . T1CKPS0 T1CKPS1 ]
-"23033
-[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 23033:     struct {
-[s S1116 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1116 . . CKPS0 CKPS1 ]
-"23038
-[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 23038:     struct {
-[s S1117 :1 `uc 1 :1 `uc 1 ]
-[n S1117 . . RD161 ]
-"23017
-[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 23017: typedef union {
-[u S1113 `S1114 1 `S1115 1 `S1116 1 `S1117 1 ]
-[n S1113 . . . . . ]
-"23043
-[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 23043: extern volatile T1CONbits_t T1CONbits __attribute__((address(0x31E)));
-[v _T1CONbits `VS1113 ~T0 @X0 0 e@798 ]
-[t T4 __interrupt irq ( 27 ) high_priority ]
-"39 interrupts.c
-[; ;interrupts.c: 39: extern volatile u8 G_u8SystemFlags;
-[v _G_u8SystemFlags `Vuc ~T0 @X0 0 e ]
-"37
-[; ;interrupts.c: 37: extern volatile u32 G_u32SystemTime1ms;
-[v _G_u32SystemTime1ms `Vul ~T0 @X0 0 e ]
+[p mainexit ]
+"58 ./encm369_pic18.h
+[; ;./encm369_pic18.h: 58: void ClockSetup(void);
+[v _ClockSetup `(v ~T0 @X0 0 ef ]
+"59
+[; ;./encm369_pic18.h: 59: void GpioSetup(void);
+[v _GpioSetup `(v ~T0 @X0 0 ef ]
+"27 ./interrupts.h
+[; ;./interrupts.h: 27: void InterruptSetup(void);
+[v _InterruptSetup `(v ~T0 @X0 0 ef ]
+"61 ./encm369_pic18.h
+[; ;./encm369_pic18.h: 61: void SysTickSetup(void);
+[v _SysTickSetup `(v ~T0 @X0 0 ef ]
+"28 ./user_app.h
+[; ;./user_app.h: 28: void UserAppInitialize(void);
+[v _UserAppInitialize `(v ~T0 @X0 0 ef ]
+"29
+[; ;./user_app.h: 29: void UserAppRun(void);
+[v _UserAppRun `(v ~T0 @X0 0 ef ]
+"45585 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
+[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 45585: extern volatile unsigned char LATA __attribute__((address(0x4BE)));
+[v _LATA `Vuc ~T0 @X0 0 e@1214 ]
+"62 ./encm369_pic18.h
+[; ;./encm369_pic18.h: 62: void SystemSleep(void);
+[v _SystemSleep `(v ~T0 @X0 0 ef ]
 "30 ./configuration.h
 [p x FEXTOSC  =  OFF     ]
 "31
@@ -2623,131 +2545,79 @@ Version 4.0 HI-TECH Software Intermediate Code
 "47642
 [; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 47642: __asm("TOSU equ 04FFh");
 [; <" TOSU equ 04FFh ;# ">
-"74 interrupts.c
-[; ;interrupts.c: 74: void InterruptSetup(void)
-[v _InterruptSetup `(v ~T0 @X0 1 ef ]
-"75
-[; ;interrupts.c: 75: {
-{
-[e :U _InterruptSetup ]
-[f ]
-"77
-[; ;interrupts.c: 77:   INTCON0bits.IPEN = 1;
-[e = . . _INTCON0bits 0 4 -> -> 1 `i `uc ]
-"80
-[; ;interrupts.c: 80:   INTCON0bits.GIEH = 1;
-[e = . . _INTCON0bits 1 1 -> -> 1 `i `uc ]
-"81
-[; ;interrupts.c: 81:   INTCON0bits.GIEL = 1;
-[e = . . _INTCON0bits 0 5 -> -> 1 `i `uc ]
-"83
-[; ;interrupts.c: 83: }
-[e :UE 2272 ]
-}
-[v $root$_SW_ISR `(v ~T0 @X0 0 e ]
-"86
-[; ;interrupts.c: 86: void __attribute__((picinterrupt(("irq(0), high_priority")))) SW_ISR(void)
-[v _SW_ISR `(v ~T1 @X0 1 ef ]
-"87
-[; ;interrupts.c: 87: {
-{
-[e :U _SW_ISR ]
-[f ]
-"88
-[; ;interrupts.c: 88:   PIR0bits.SWIF = 0;
-[e = . . _PIR0bits 0 0 -> -> 0 `i `uc ]
-"90
-[; ;interrupts.c: 90: }
-[e :UE 2273 ]
-}
-[v $root$_DEFAULT_ISR `(v ~T0 @X0 0 e ]
-"93
-[; ;interrupts.c: 93: void __attribute__((picinterrupt(("irq(default), low_priority")))) DEFAULT_ISR(void)
-[v _DEFAULT_ISR `(v ~T2 @X0 1 ef ]
-"94
-[; ;interrupts.c: 94: {
-{
-[e :U _DEFAULT_ISR ]
-[f ]
-"99
-[; ;interrupts.c: 99:   static u32 u32UnhandledCounter = 0;
-[v F15927 `ul ~T0 @X0 1 s u32UnhandledCounter ]
-[i F15927
+"13 main.c
+[; ;main.c: 13: volatile u32 G_u32SystemTime1ms = 0;
+[v _G_u32SystemTime1ms `Vul ~T0 @X0 1 e ]
+[i _G_u32SystemTime1ms
 -> -> -> 0 `i `l `ul
 ]
-"101
-[; ;interrupts.c: 101:   u32UnhandledCounter++;
-[e ++ F15927 -> -> -> 1 `i `l `ul ]
-"106
-[; ;interrupts.c: 106: }
-[e :UE 2274 ]
-}
-[v $root$_TMR1_ISR `(v ~T0 @X0 0 e ]
-"112
-[; ;interrupts.c: 112: void __attribute__((picinterrupt(("irq(28), high_priority")))) TMR1_ISR(void)
-[v _TMR1_ISR `(v ~T3 @X0 1 ef ]
-"113
-[; ;interrupts.c: 113: {
-{
-[e :U _TMR1_ISR ]
-[f ]
-"114
-[; ;interrupts.c: 114:   static u8 u8Index = 0;
-[v F15929 `uc ~T0 @X0 1 s u8Index ]
-[i F15929
+"14
+[; ;main.c: 14: volatile u32 G_u32SystemTime1s = 0;
+[v _G_u32SystemTime1s `Vul ~T0 @X0 1 e ]
+[i _G_u32SystemTime1s
+-> -> -> 0 `i `l `ul
+]
+"15
+[; ;main.c: 15: volatile u8 G_u8SystemFlags = 0;
+[v _G_u8SystemFlags `Vuc ~T0 @X0 1 e ]
+[i _G_u8SystemFlags
 -> -> 0 `i `uc
 ]
-"117
-[; ;interrupts.c: 117:   TMR1H = G_u8UserAppTimePeriodHi;
-[e = _TMR1H _G_u8UserAppTimePeriodHi ]
-"118
-[; ;interrupts.c: 118:   TMR1L = G_u8UserAppTimePeriodLo;
-[e = _TMR1L _G_u8UserAppTimePeriodLo ]
-"126
-[; ;interrupts.c: 126:    DAC1DATL = G_au8UserAppsinTable[u8Index +=4];
-[e = _DAC1DATL *U + &U _G_au8UserAppsinTable * -> =+ F15929 -> -> 4 `i `uc `ux -> -> # *U &U _G_au8UserAppsinTable `ui `ux ]
-"132
-[; ;interrupts.c: 132:   PIR3bits.TMR1IF = 0;
-[e = . . _PIR3bits 0 4 -> -> 0 `i `uc ]
-"135
-[; ;interrupts.c: 135:   if( !(G_u8UserAppFlags & (u8)0x01) )
-[e $ ! ! != & -> _G_u8UserAppFlags `i -> -> -> 1 `i `uc `i -> 0 `i 2276  ]
-"136
-[; ;interrupts.c: 136:   {
+[v $root$_main `(v ~T0 @X0 0 e ]
+"34
+[; ;main.c: 34: void main(void)
+[v _main `(v ~T0 @X0 1 ef ]
+"35
+[; ;main.c: 35: {
 {
-"137
-[; ;interrupts.c: 137:     PIE3bits.TMR1IE = 0;
-[e = . . _PIE3bits 0 4 -> -> 0 `i `uc ]
-"138
-[; ;interrupts.c: 138:     T1CONbits.ON = 0;
-[e = . . _T1CONbits 0 0 -> -> 0 `i `uc ]
-"139
-[; ;interrupts.c: 139:   }
-}
-[e :U 2276 ]
-"141
-[; ;interrupts.c: 141: }
-[e :UE 2275 ]
-}
-[v $root$_TMR2_ISR `(v ~T0 @X0 0 e ]
-"145
-[; ;interrupts.c: 145: void __attribute__((picinterrupt(("irq(27), high_priority")))) TMR2_ISR(void)
-[v _TMR2_ISR `(v ~T4 @X0 1 ef ]
-"146
-[; ;interrupts.c: 146: {
-{
-[e :U _TMR2_ISR ]
+[e :U _main ]
 [f ]
-"148
-[; ;interrupts.c: 148:   PIR3bits.TMR2IF = 0;
-[e = . . _PIR3bits 0 3 -> -> 0 `i `uc ]
-"149
-[; ;interrupts.c: 149:   G_u8SystemFlags &= ~(u8)0x40;
-[e =& _G_u8SystemFlags -> ~ -> -> -> 64 `i `uc `i `Vuc ]
-"152
-[; ;interrupts.c: 152:   G_u32SystemTime1ms++;
-[e ++ _G_u32SystemTime1ms -> -> 1 `i `Vul ]
-"161
-[; ;interrupts.c: 161: }
-[e :UE 2277 ]
+"36
+[; ;main.c: 36:   G_u8SystemFlags |= (u8)0x80;
+[e =| _G_u8SystemFlags -> -> -> 128 `i `uc `Vuc ]
+"39
+[; ;main.c: 39:   ClockSetup();
+[e ( _ClockSetup ..  ]
+"40
+[; ;main.c: 40:   GpioSetup();
+[e ( _GpioSetup ..  ]
+"41
+[; ;main.c: 41:   InterruptSetup();
+[e ( _InterruptSetup ..  ]
+"43
+[; ;main.c: 43:   SysTickSetup();
+[e ( _SysTickSetup ..  ]
+"48
+[; ;main.c: 48:   UserAppInitialize();
+[e ( _UserAppInitialize ..  ]
+"51
+[; ;main.c: 51:   G_u8SystemFlags &= ~(u8)0x80;
+[e =& _G_u8SystemFlags -> ~ -> -> -> 128 `i `uc `i `Vuc ]
+"54
+[; ;main.c: 54:   while(1)
+[e :U 2274 ]
+"55
+[; ;main.c: 55:   {
+{
+"59
+[; ;main.c: 59:     UserAppRun();
+[e ( _UserAppRun ..  ]
+"62
+[; ;main.c: 62:     (LATA &= 0x7F);
+[e =& _LATA -> -> 127 `i `Vuc ]
+"63
+[; ;main.c: 63:     SystemSleep();
+[e ( _SystemSleep ..  ]
+"64
+[; ;main.c: 64:     (LATA |= 0x80);
+[e =| _LATA -> -> 128 `i `Vuc ]
+"66
+[; ;main.c: 66:   }
+}
+[e :U 2273 ]
+[e $U 2274  ]
+[e :U 2275 ]
+"68
+[; ;main.c: 68: }
+[e :UE 2272 ]
 }

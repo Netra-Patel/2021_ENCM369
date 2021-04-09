@@ -41,12 +41,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "43 interrupts.c
 [; ;interrupts.c: 43: extern volatile u8 G_u8UserAppTimePeriodLo;
 [v _G_u8UserAppTimePeriodLo `Vuc ~T0 @X0 0 e ]
-"3158 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
-[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 3158: extern volatile unsigned char DAC1DATL __attribute__((address(0x07D)));
-[v _DAC1DATL `Vuc ~T0 @X0 0 e@125 ]
-"45 interrupts.c
-[; ;interrupts.c: 45: extern u8 G_au8UserAppsinTable[];
-[v _G_au8UserAppsinTable `uc ~T0 @X0 -> 0 `x e ]
 "44876 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
 [; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 44876:     struct {
 [s S2125 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -2703,9 +2697,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "118
 [; ;interrupts.c: 118:   TMR1L = G_u8UserAppTimePeriodLo;
 [e = _TMR1L _G_u8UserAppTimePeriodLo ]
-"126
-[; ;interrupts.c: 126:    DAC1DATL = G_au8UserAppsinTable[u8Index +=4];
-[e = _DAC1DATL *U + &U _G_au8UserAppsinTable * -> =+ F15929 -> -> 4 `i `uc `ux -> -> # *U &U _G_au8UserAppsinTable `ui `ux ]
 "132
 [; ;interrupts.c: 132:   PIR3bits.TMR1IF = 0;
 [e = . . _PIR3bits 0 4 -> -> 0 `i `uc ]
